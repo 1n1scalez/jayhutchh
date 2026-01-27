@@ -69,6 +69,21 @@
             background-color: var(--grid-color);
         }
 
+        /* Mobile Split Line */
+        @media (max-width: 768px) {
+            .mobile-split-line {
+                position: fixed;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 1px;
+                height: 100%;
+                background-color: var(--grid-color);
+                z-index: 0;
+                pointer-events: none;
+            }
+        }
+
         .nav-link {
             font-size: 12px;
             font-weight: 700;
