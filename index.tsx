@@ -14,7 +14,6 @@ import {
 // Import images from LandingPage
 import antImg from './LandingPage/ant.jpg';
 import carmenImg from './LandingPage/carmen.jpg';
-import edriImg from './LandingPage/edri.jpg';
 import finaImg from './LandingPage/fina.jpg';
 import jaedynImg from './LandingPage/jaedyn.jpg';
 import kamisImg from './LandingPage/kamis.jpg';
@@ -335,13 +334,6 @@ const App = () => {
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
                 />
               </div>
-              <div className="rounded-2xl overflow-hidden aspect-[2/3] bg-zinc-900 group">
-                <img
-                  src={sadiImg}
-                  alt="Recent Work - Sadi"
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
-                />
-              </div>
             </div>
 
             {/* Column 2 */}
@@ -387,8 +379,8 @@ const App = () => {
               </div>
               <div className="rounded-2xl overflow-hidden aspect-[2/3] bg-zinc-900 group">
                 <img
-                  src={edriImg}
-                  alt="Recent Work - Edri"
+                  src={sadiImg}
+                  alt="Recent Work - Sadi"
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
                 />
               </div>
