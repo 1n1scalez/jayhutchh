@@ -43,14 +43,6 @@
             letter-spacing: -0.02em;
         }
 
-        .vertical-text {
-            writing-mode: vertical-rl;
-            text-transform: uppercase;
-            font-size: 10px;
-            letter-spacing: 0.2em;
-            font-weight: 700;
-        }
-
         .grid-lines {
             position: fixed;
             top: 0;
@@ -69,7 +61,6 @@
             background-color: var(--grid-color);
         }
 
-        /* Mobile Split Line */
         @media (max-width: 768px) {
             .mobile-split-line {
                 position: fixed;
@@ -85,8 +76,9 @@
         }
 
         .nav-link {
-            font-size: 12px;
-            font-weight: 700;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 18px;
+            font-weight: 400;
             letter-spacing: 0.05em;
             text-transform: uppercase;
             position: relative;
@@ -107,10 +99,11 @@
         .btn-outline {
             border: 1px solid var(--border-color);
             padding: 12px 24px;
-            font-size: 11px;
-            font-weight: 700;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 16px;
+            font-weight: 400;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.05em;
             transition: all 0.2s ease;
         }
 
@@ -119,138 +112,204 @@
             color: var(--bg-color);
         }
 
-        /* Footer Styles */
-        .site-footer {
-            background-color: #0c0c0c;
-            background-image: url('/topo_background.png');
-            background-size: cover;
-            background-position: center;
-            color: #ffffff;
-            padding: 80px 40px 40px;
-            position: relative;
-            z-index: 20;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        /* Refined Theme Toggle */
+        .theme-toggle-pill {
+            display: flex;
+            flex-direction: column;
+            background: rgba(161, 161, 170, 0.1);
+            border-radius: 999px;
+            padding: 4px;
+            gap: 4px;
+            width: 50px;
         }
 
-        .footer-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr;
+        .theme-toggle-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 16px 0;
+            border-radius: 999px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .theme-toggle-btn.active {
+            background-color: var(--text-color);
+            color: var(--bg-color);
+        }
+
+        .theme-toggle-btn:not(.active) {
+            color: var(--muted-text);
+        }
+
+        .theme-toggle-btn .toggle-text {
+            writing-mode: vertical-rl;
+            text-transform: uppercase;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 14px;
+            letter-spacing: 0.05em;
+            font-weight: 400;
+            transform: rotate(180deg);
+        }
+
+        /* Vertical Socials */
+        .vertical-socials {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             gap: 40px;
         }
 
+        .social-link-vertical {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-color);
+            opacity: 0.4;
+            transition: opacity 0.3s ease;
+        }
+
+        .social-link-vertical:hover {
+            opacity: 1;
+        }
+
+        .social-link-vertical span {
+            writing-mode: vertical-rl;
+            text-transform: uppercase;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 16px;
+            letter-spacing: 0.02em;
+            font-weight: 400;
+            transform: rotate(180deg);
+        }
+
+        /* Lightbox UI Refinement */
+        .lightbox-overlay {
+            background-color: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .lightbox-controls {
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: flex;
+            height: 100px;
+        }
+
+        .lightbox-control-btn {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            opacity: 0.4;
+            transition: all 0.3s ease;
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .lightbox-control-btn:hover {
+            opacity: 1;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .lightbox-close-btn {
+            background: rgba(255, 255, 255, 0.1);
+            opacity: 1;
+        }
+
+        .lightbox-counter {
+            height: 100px;
+            padding: 0 40px;
+            display: flex;
+            align-items: center;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            color: white;
+            opacity: 0.6;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .lightbox-nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 80px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 120;
+            cursor: pointer;
+        }
+
+        .lightbox-overlay:hover .lightbox-nav-btn {
+            opacity: 0.5;
+        }
+
+        .lightbox-nav-btn:hover {
+            opacity: 1 !important;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
         @media (max-width: 768px) {
-            .footer-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
+            .lightbox-nav-btn {
+                opacity: 1 !important;
+                background: rgba(0, 0, 0, 0.2);
+                width: 60px;
+                height: 80px;
             }
         }
 
-        .footer-heading {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 64px;
-            line-height: 0.9;
-            text-transform: uppercase;
-            letter-spacing: -0.02em;
+        .lightbox-nav-prev {
+            left: 0;
+            border-radius: 0 12px 12px 0;
         }
 
-        .footer-heading span.red {
-            color: #ef4444;
+        .lightbox-nav-next {
+            right: 0;
+            border-radius: 12px 0 0 12px;
         }
 
-        .footer-logo {
-            width: 60px;
-            height: 60px;
-            border: 2px solid white;
+        .lightbox-brand-pill {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            padding: 12px 32px;
+            border-radius: 999px;
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 120;
+        }
+
+        /* Header Logo Block */
+        .header-logo-block {
+            width: 100px;
+            height: 100px;
+            background-color: #000;
+            color: #fff;
             display: flex;
             align-items: center;
             justify-content: center;
             font-family: 'Bebas Neue', sans-serif;
             font-size: 32px;
-            margin-bottom: 20px;
-        }
-
-        .subscription-field {
-            position: relative;
-            margin-top: 20px;
-        }
-
-        .subscription-input {
-            width: 100%;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 12px 16px;
-            color: white;
-            font-size: 14px;
-            outline: none;
-            transition: border-color 0.3s ease;
-        }
-
-        .subscription-input:focus {
-            border-color: rgba(255, 255, 255, 0.3);
-        }
-
-        .subscription-icon {
-            position: absolute;
-            right: 12px;
-            top: 50%;
-            transform: translateY(-50%);
-            opacity: 0.5;
-        }
-
-        .social-icon {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-
-        .social-icon:hover {
-            background-color: white;
-            color: black;
-            border-color: white;
-        }
-
-        /* Gallery Row Styles */
-        .gallery-row {
-            width: 100%;
-            height: 250px;
-            display: flex;
-            overflow-x: auto;
-            background-color: #000;
-            scrollbar-width: none;
-            /* Firefox */
-        }
-
-        .gallery-row::-webkit-scrollbar {
-            display: none;
-            /* Chrome, Safari, Opera */
-        }
-
-        .gallery-image-container {
-            flex: 0 0 300px;
-            height: 100%;
-            position: relative;
-            overflow: hidden;
-            border-right: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .gallery-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: grayscale(100%);
-            transition: filter 0.5s ease, transform 0.5s ease;
-        }
-
-        .gallery-image-container:hover .gallery-image {
-            filter: grayscale(0%);
-            transform: scale(1.05);
+            letter-spacing: -1px;
         }
     </style>
     <script type="importmap">

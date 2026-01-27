@@ -4,12 +4,17 @@ import {
   Maximize,
   LayoutGrid,
   Instagram,
-  Twitter as TwitterIcon,
   Moon,
   Sun,
   Mail,
   Music,
-  X
+  X,
+  ChevronLeft,
+  ChevronRight,
+  Search,
+  Play,
+  Download,
+  Facebook
 } from 'lucide-react';
 
 // Import images from LandingPage
@@ -26,6 +31,13 @@ import zoeImg from './LandingPage/zoe.jpeg';
 import keshaImg from './LandingPage/kesha.jpeg';
 import sadiImg from './LandingPage/sadi.jpg';
 import zoe2Img from './LandingPage/zoe2.jpeg';
+import valImg from './LandingPage/val.png';
+
+const ALL_IMAGES = [
+  leoImg, carmenImg, jaedynImg, finaImg,
+  zoeImg, zoe2Img, antImg, keshaImg,
+  taiImg, sadiImg, yaniImg, snowImg
+];
 
 type Page = 'HOME' | 'PORTFOLIO' | 'PACKAGES' | 'AVAILABILITY' | 'ABOUT' | 'FAQ';
 
@@ -55,7 +67,6 @@ const Footer = () => {
       } else if (isDeleting && displayText === '') {
         setIsDeleting(false);
         setCurrentPhraseIndex((prev) => (prev + 1) % phrases.length);
-        setTypingSpeed(500);
       }
     };
 
@@ -63,91 +74,119 @@ const Footer = () => {
     return () => clearTimeout(timer);
   }, [displayText, isDeleting, currentPhraseIndex, typingSpeed]);
 
-  const galleryImages = [
-    'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=800&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=800&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1501854140801-50d01698950b?q=80&w=800&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?q=80&w=800&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=800&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=800&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1472214103451-9374bd1c798e?q=80&w=800&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=800&auto=format&fit=crop'
-  ];
-
   return (
-    <>
-      <div className="gallery-row">
-        {galleryImages.map((src, i) => (
-          <div key={i} className="gallery-image-container">
-            <img src={src} alt={`Work ${i + 1}`} className="gallery-image" />
-          </div>
-        ))}
-      </div>
-      <footer className="site-footer">
-        <div className="footer-grid">
-          {/* Left Column: Heading */}
-          <div className="flex flex-col justify-between">
-            <h2 className="footer-heading">
+    <footer className="relative bg-black text-white overflow-hidden border-t border-zinc-900">
+      {/* Background Pattern */}
+      <div
+        className="absolute inset-0 opacity-20 pointer-events-none"
+        style={{ backgroundImage: "url('/footer_pattern.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}
+      ></div>
+
+      <div className="container mx-auto px-6 py-24 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
+
+          {/* Left: Headline */}
+          <div className="lg:col-span-5 flex flex-col gap-8">
+            <h2 className="font-condensed text-5xl lg:text-7xl leading-[0.85] tracking-tighter">
               COME FOR THE PHOTOS,<br />
-              STAY FOR THE <span className="red transition-all duration-500 min-h-[1em] inline-block">{displayText}<span className="animate-pulse">|</span></span>
+              STAY FOR THE <span className="text-rose-600 inline-block min-w-[10ch]">{displayText}<span className="animate-pulse">|</span></span>
             </h2>
-
-            <div className="mt-12">
-              <div className="footer-logo">JH</div>
-              <p className="text-[10px] uppercase tracking-widest opacity-40">
-                © 2026. Copyright JayHutchh.
-              </p>
-            </div>
-          </div>
-
-          {/* Center Column: Socials */}
-          <div className="flex flex-col items-center justify-center gap-6">
-            <div className="relative w-24 h-24 mb-4">
-              <div className="w-full h-full rounded-full border-2 border-white/20 flex items-center justify-center overflow-hidden bg-zinc-900">
-                <span className="text-2xl font-condensed">JH</span>
+            <div className="flex items-center gap-6 mt-4">
+              <div className="w-24 h-24 bg-white text-black flex items-center justify-center font-condensed text-4xl border border-white tracking-tighter">
+                JH
               </div>
-            </div>
-
-            <div className="text-center">
-              <h3 className="text-xl font-condensed tracking-tighter uppercase mb-1">@jayhutchh</h3>
-              <p className="text-[10px] uppercase tracking-widest opacity-60 max-w-[200px] mx-auto">
-                Photographer & Visual Creator Serving Worldwide
+              <p className="font-condensed text-zinc-500 text-xl tracking-tighter uppercase">
+                © {new Date().getFullYear()}. Made by Jay Hutch.
               </p>
-            </div>
-
-            <div className="flex gap-4 mt-4">
-              <a href="#" className="social-icon"><TwitterIcon size={16} /></a>
-              <a href="#" className="social-icon"><Instagram size={16} /></a>
-              <a href="#" className="social-icon"><Music size={16} /></a>
             </div>
           </div>
 
-          {/* Right Column: Subscribe */}
-          <div className="flex flex-col justify-start">
-            <h3 className="text-lg font-condensed tracking-tighter uppercase mb-2">Subscribe:</h3>
-            <p className="text-xs opacity-60 mb-6">I'll send you cool stuff from time to time.</p>
+          {/* Center: Profile */}
+          <div className="lg:col-span-3 flex flex-col items-center text-center gap-6">
+            <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-zinc-900 ring-2 ring-zinc-800 shadow-2xl">
+              <img src={leoImg} alt="Jay Hutch" className="w-full h-full object-cover transition-all duration-500" />
+            </div>
+            <div>
+              <h3 className="font-condensed text-4xl tracking-tighter">@JAYHUTCHH</h3>
+              <p className="font-condensed text-zinc-500 text-lg uppercase tracking-tighter mt-1">
+                Photographer & Visual Creator
+              </p>
+            </div>
+            <div className="flex gap-4">
+              <a href="https://facebook.com/jayhutchh" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white text-black rounded-full flex items-center justify-center hover:bg-rose-500 hover:text-white transition-all duration-300">
+                <Facebook size={18} />
+              </a>
+              <a href="https://instagram.com/jayhutchh" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white text-black rounded-full flex items-center justify-center hover:bg-rose-500 hover:text-white transition-all duration-300">
+                <Instagram size={18} />
+              </a>
 
-            <div className="subscription-field">
+            </div>
+          </div>
+
+          {/* Right: Subscribe */}
+          <div className="lg:col-span-4 flex flex-col gap-6 lg:pl-8">
+            <div>
+              <h3 className="font-condensed text-4xl tracking-tighter mb-2">SUBSCRIBE:</h3>
+              <p className="font-condensed text-zinc-500 text-xl leading-none uppercase tracking-tighter">
+                I'll send you cool stuff from time to time.<br />No spam, just vibes.
+              </p>
+            </div>
+            <form className="relative group">
               <input
                 type="email"
-                placeholder="email address"
-                className="subscription-input"
+                placeholder="EMAIL ADDRESS"
+                className="w-full bg-zinc-900/50 border border-zinc-800 py-4 px-6 pr-12 rounded text-white text-xl font-condensed tracking-tighter placeholder:text-zinc-700 focus:outline-none focus:border-rose-500 focus:ring-1 focus:ring-rose-500 transition-all"
               />
-              <div className="subscription-icon">
-                <Mail size={16} />
-              </div>
-            </div>
+              <button
+                type="submit"
+                className="absolute right-2 top-1/2 -translate-y-1/2 p-2 text-zinc-500 hover:text-rose-500 transition-colors"
+              >
+                <Mail size={18} />
+              </button>
+            </form>
           </div>
+
         </div>
-      </footer>
-    </>
+      </div>
+    </footer>
   );
 };
 
 const App = () => {
   const [activePage, setActivePage] = useState<Page>('HOME');
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+
+  const handleNext = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    if (selectedIndex !== null) {
+      setSelectedIndex((prev) => (prev! + 1) % ALL_IMAGES.length);
+    }
+  };
+
+  const handlePrev = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    if (selectedIndex !== null) {
+      setSelectedIndex((prev) => (prev! - 1 + ALL_IMAGES.length) % ALL_IMAGES.length);
+    }
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (selectedIndex === null) return;
+
+      if (e.key === 'ArrowRight') {
+        setSelectedIndex((prev) => (prev! + 1) % ALL_IMAGES.length);
+      } else if (e.key === 'ArrowLeft') {
+        setSelectedIndex((prev) => (prev! - 1 + ALL_IMAGES.length) % ALL_IMAGES.length);
+      } else if (e.key === 'Escape') {
+        setSelectedIndex(null);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selectedIndex]);
 
   useEffect(() => {
     if (isDarkMode) {
@@ -181,10 +220,8 @@ const App = () => {
       <header className="fixed top-0 left-0 w-full h-24 border-b border-[var(--border-color)] bg-[var(--bg-color)] flex items-center justify-between z-50">
         {/* Mobile Header Layout (3-tab grid) */}
         <div className="flex md:hidden w-full h-full">
-          <div className="flex-1 border-r border-[var(--border-color)] bg-black flex items-center justify-center">
-            <div className="relative w-10 h-10 flex flex-col justify-center items-center font-black tracking-tighter leading-none text-white">
-              <span className="text-2xl border-2 border-white p-1">JH</span>
-            </div>
+          <div className="header-logo-block">
+            JH
           </div>
           <div className="flex-1 flex items-center justify-center border-r border-[var(--border-color)] bg-[var(--bg-color)]">
             <button onClick={toggleTheme} className="text-[var(--text-color)]">
@@ -205,10 +242,8 @@ const App = () => {
         {/* Desktop Header Layout (Original) */}
         <div className="hidden md:flex w-full h-full items-center justify-between">
           {/* Logo */}
-          <div className="w-24 h-full border-r border-[var(--border-color)] flex items-center justify-center">
-            <div className="relative w-10 h-10 flex flex-col justify-center items-center font-black tracking-tighter leading-none">
-              <span className="text-2xl border-2 border-[var(--text-color)] p-1">JH</span>
-            </div>
+          <div className="header-logo-block">
+            JH
           </div>
 
           {/* Navigation */}
@@ -226,7 +261,18 @@ const App = () => {
 
           {/* Action Icons */}
           <div className="flex h-full">
-            <div className="w-16 h-full border-l border-[var(--border-color)] flex items-center justify-center cursor-pointer hover:bg-[var(--text-color)] hover:text-[var(--bg-color)] transition-colors">
+            <div
+              className="w-16 h-full border-l border-[var(--border-color)] flex items-center justify-center cursor-pointer hover:bg-[var(--text-color)] hover:text-[var(--bg-color)] transition-colors"
+              onClick={() => {
+                if (!document.fullscreenElement) {
+                  document.documentElement.requestFullscreen();
+                } else {
+                  if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                  }
+                }
+              }}
+            >
               <Maximize size={18} />
             </div>
             <div className="w-16 h-full border-l border-[var(--border-color)] flex items-center justify-center cursor-pointer bg-zinc-950 text-white">
@@ -237,36 +283,37 @@ const App = () => {
       </header>
 
       {/* Left Sidebar - Theme Toggle */}
-      <aside className="fixed left-0 top-1/2 -translate-y-1/2 hidden md:flex flex-col items-center gap-12 z-40">
-        <div className="flex flex-col items-center gap-2">
-          <button
-            onClick={() => setIsDarkMode(false)}
-            className={`flex flex-col items-center gap-2 group ${!isDarkMode ? 'text-[var(--text-color)]' : 'text-[var(--muted-text)]'}`}
-          >
-            <div className="vertical-text">LIGHT</div>
-            <Sun size={14} className={!isDarkMode ? 'opacity-100' : 'opacity-40'} />
-          </button>
-          <div className="w-px h-8 bg-[var(--border-color)] my-2"></div>
+      <aside className="fixed left-8 top-1/2 -translate-y-1/2 hidden md:block z-40">
+        <div className="theme-toggle-pill">
           <button
             onClick={() => setIsDarkMode(true)}
-            className={`flex flex-col items-center gap-2 group ${isDarkMode ? 'text-[var(--text-color)]' : 'text-[var(--muted-text)]'}`}
+            className={`theme-toggle-btn ${isDarkMode ? 'active' : ''}`}
           >
-            <Moon size={14} className={isDarkMode ? 'opacity-100' : 'opacity-40'} />
-            <div className="vertical-text transform rotate-180">DARK</div>
+            <span className="toggle-text">DARK</span>
+            <Moon size={14} />
+          </button>
+          <button
+            onClick={() => setIsDarkMode(false)}
+            className={`theme-toggle-btn ${!isDarkMode ? 'active' : ''}`}
+          >
+            <Sun size={14} />
+            <span className="toggle-text">LIGHT</span>
           </button>
         </div>
       </aside>
 
       {/* Right Sidebar - Socials */}
-      <aside className="fixed right-0 top-1/2 -translate-y-1/2 hidden md:flex flex-col items-center gap-12 z-40 px-4">
-        <a href="#" className="flex items-center gap-4 text-[var(--text-color)] opacity-60 hover:opacity-100 transition-opacity">
-          <div className="vertical-text">INSTAGRAM</div>
-          <Instagram size={14} />
-        </a>
-        <a href="#" className="flex items-center gap-4 text-[var(--text-color)] opacity-60 hover:opacity-100 transition-opacity">
-          <div className="vertical-text">TWITTER</div>
-          <TwitterIcon size={14} />
-        </a>
+      <aside className="fixed right-8 top-1/2 -translate-y-1/2 hidden md:block z-40">
+        <div className="vertical-socials">
+          <a href="https://instagram.com/jayhutchh" target="_blank" rel="noopener noreferrer" className="social-link-vertical">
+            <span>INSTAGRAM</span>
+            <Instagram size={18} />
+          </a>
+          <a href="https://facebook.com/jayhutchh" target="_blank" rel="noopener noreferrer" className="social-link-vertical">
+            <span>FACEBOOK</span>
+            <Facebook size={18} className="transform -rotate-90" />
+          </a>
+        </div>
       </aside>
 
       {/* Main Content */}
@@ -311,7 +358,7 @@ const App = () => {
             <div className="flex flex-col gap-8">
               <div
                 className="rounded-2xl overflow-hidden aspect-[16/10] bg-zinc-900 group cursor-pointer"
-                onClick={() => setSelectedImage(leoImg)}
+                onClick={() => setSelectedIndex(0)}
               >
                 <img
                   src={leoImg}
@@ -321,7 +368,7 @@ const App = () => {
               </div>
               <div
                 className="rounded-2xl overflow-hidden aspect-[2/3] bg-zinc-900 group cursor-pointer"
-                onClick={() => setSelectedImage(carmenImg)}
+                onClick={() => setSelectedIndex(1)}
               >
                 <img
                   src={carmenImg}
@@ -331,7 +378,7 @@ const App = () => {
               </div>
               <div
                 className="rounded-2xl overflow-hidden aspect-[2/3] bg-zinc-900 group cursor-pointer"
-                onClick={() => setSelectedImage(jaedynImg)}
+                onClick={() => setSelectedIndex(2)}
               >
                 <img
                   src={jaedynImg}
@@ -341,7 +388,7 @@ const App = () => {
               </div>
               <div
                 className="rounded-2xl overflow-hidden aspect-[2/3] bg-zinc-900 group cursor-pointer"
-                onClick={() => setSelectedImage(finaImg)}
+                onClick={() => setSelectedIndex(3)}
               >
                 <img
                   src={finaImg}
@@ -355,7 +402,7 @@ const App = () => {
             <div className="flex flex-col gap-8">
               <div
                 className="rounded-2xl overflow-hidden aspect-[2/3] bg-zinc-900 group cursor-pointer"
-                onClick={() => setSelectedImage(zoeImg)}
+                onClick={() => setSelectedIndex(4)}
               >
                 <img
                   src={zoeImg}
@@ -365,7 +412,7 @@ const App = () => {
               </div>
               <div
                 className="rounded-2xl overflow-hidden aspect-[16/10] bg-zinc-900 group cursor-pointer"
-                onClick={() => setSelectedImage(zoe2Img)}
+                onClick={() => setSelectedIndex(5)}
               >
                 <img
                   src={zoe2Img}
@@ -375,7 +422,7 @@ const App = () => {
               </div>
               <div
                 className="rounded-2xl overflow-hidden aspect-[2/3] bg-zinc-900 group cursor-pointer"
-                onClick={() => setSelectedImage(antImg)}
+                onClick={() => setSelectedIndex(6)}
               >
                 <img
                   src={antImg}
@@ -385,7 +432,7 @@ const App = () => {
               </div>
               <div
                 className="rounded-2xl overflow-hidden aspect-[2/3] bg-zinc-900 group cursor-pointer"
-                onClick={() => setSelectedImage(keshaImg)}
+                onClick={() => setSelectedIndex(7)}
               >
                 <img
                   src={keshaImg}
@@ -399,7 +446,7 @@ const App = () => {
             <div className="flex flex-col gap-8">
               <div
                 className="rounded-2xl overflow-hidden aspect-[16/10] bg-zinc-900 group cursor-pointer"
-                onClick={() => setSelectedImage(taiImg)}
+                onClick={() => setSelectedIndex(8)}
               >
                 <img
                   src={taiImg}
@@ -409,7 +456,7 @@ const App = () => {
               </div>
               <div
                 className="rounded-2xl overflow-hidden aspect-[2/3] bg-zinc-900 group cursor-pointer"
-                onClick={() => setSelectedImage(sadiImg)}
+                onClick={() => setSelectedIndex(9)}
               >
                 <img
                   src={sadiImg}
@@ -419,7 +466,7 @@ const App = () => {
               </div>
               <div
                 className="rounded-2xl overflow-hidden aspect-[2/3] bg-zinc-900 group cursor-pointer"
-                onClick={() => setSelectedImage(yaniImg)}
+                onClick={() => setSelectedIndex(10)}
               >
                 <img
                   src={yaniImg}
@@ -429,7 +476,7 @@ const App = () => {
               </div>
               <div
                 className="rounded-2xl overflow-hidden aspect-[2/3] bg-zinc-900 group cursor-pointer"
-                onClick={() => setSelectedImage(snowImg)}
+                onClick={() => setSelectedIndex(11)}
               >
                 <img
                   src={snowImg}
@@ -442,37 +489,157 @@ const App = () => {
         </div>
       </main>
 
-      {/* Scroll Indicator or extra content area */}
-      <section className="h-screen w-full flex items-center justify-center bg-[var(--bg-color)]">
-        <p className="text-[var(--muted-text)] font-bold tracking-widest text-xs uppercase">More content coming soon...</p>
+      {/* Spacing */}
+      <section className="w-full bg-[var(--bg-color)] py-24" />
+
+      {/* Valentines Day Mini Shoot Section */}
+      <section className="width-full bg-rose-50 dark:bg-zinc-950 border-t border-rose-200 dark:border-zinc-800 overflow-hidden transition-colors duration-500">
+        <div className="flex flex-col lg:flex-row h-auto lg:h-[600px]">
+          {/* Left Content */}
+          <div className="flex-1 p-12 lg:p-24 flex flex-col justify-center items-start gap-8 order-2 lg:order-1">
+            <h2 className="font-[Bebas_Neue] text-6xl lg:text-8xl leading-[0.85] tracking-tight text-rose-950 dark:text-rose-50">
+              VALENTINE'S<br />SELF-LOVE<br />MINI SESSIONS
+            </h2>
+            <p className="text-rose-800/80 dark:text-rose-200/70 max-w-md text-lg leading-relaxed font-medium">
+              A confidence-boosting studio session made just for you. Exclusive to Virginia, these limited sessions are designed to capture your authentic self.
+            </p>
+            <div className="flex gap-4">
+              <a
+                href="https://book.stripe.com/eVqaEW3MuaDr15J9OebfO0L"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-rose-600 dark:bg-rose-700 text-white px-8 py-4 font-condensed text-xl tracking-wide uppercase hover:bg-rose-700 dark:hover:bg-rose-600 transition-colors text-center flex items-center justify-center shadow-lg hover:shadow-rose-500/20"
+              >
+                RESERVE MY SPOT
+              </a>
+            </div>
+            <p className="text-xs tracking-widest uppercase text-rose-600 dark:text-rose-400 font-bold bg-rose-100 dark:bg-rose-900/30 px-3 py-1 rounded-sm">
+              ONLY 30 SESSIONS AVAILABLE • FEB 8–14 ONLY
+            </p>
+          </div>
+
+          {/* Right Media */}
+          <div className="flex-1 relative order-1 lg:order-2 bg-rose-200 dark:bg-zinc-900 group cursor-pointer overflow-hidden">
+            <img
+              src={valImg}
+              alt="Valentines Shoot"
+              className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100 mix-blend-multiply dark:mix-blend-normal"
+            />
+          </div>
+        </div>
+
+        {/* Stats Bar */}
+        <div className="bg-black/95 text-white py-16 border-t border-white/10 relative overflow-hidden">
+          {/* Background Topo Pattern Opacity */}
+          <div className="absolute inset-0 opacity-20 pointer-events-none" style={{ backgroundImage: "url('/topo_background.png')", backgroundSize: 'cover' }}></div>
+
+          <div className="container mx-auto px-6 relative z-10">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+              <div className="flex flex-col items-center gap-2">
+                <span className="font-[Bebas_Neue] text-5xl md:text-6xl">30</span>
+                <span className="text-[10px] tracking-[0.2em] font-bold uppercase text-zinc-400">MINUTES</span>
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <span className="font-[Bebas_Neue] text-5xl md:text-6xl">6</span>
+                <span className="text-[10px] tracking-[0.2em] font-bold uppercase text-zinc-400">PHOTOS</span>
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <span className="font-[Bebas_Neue] text-5xl md:text-6xl">1</span>
+                <span className="text-[10px] tracking-[0.2em] font-bold uppercase text-zinc-400">OUTFIT</span>
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <span className="font-[Bebas_Neue] text-5xl md:text-6xl">$225</span>
+                <span className="text-[10px] tracking-[0.2em] font-bold uppercase text-zinc-400">PRICE</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
+      {/* Spacing */}
+      <section className="w-full bg-[var(--bg-color)] py-24" />
+
       {/* New Footer */}
+      {/* Photo Strip */}
+      <section className="w-full grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8">
+        {ALL_IMAGES.slice(0, 8).map((img, index) => (
+          <div
+            key={index}
+            className="aspect-square relative group overflow-hidden"
+          >
+            <img
+              src={img}
+              alt={`Gallery ${index}`}
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            />
+            <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+          </div>
+        ))}
+      </section>
       <Footer />
 
+
       {/* Lightbox Modal */}
-      {selectedImage && (
+      {selectedIndex !== null && (
         <div
-          className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 md:p-12 animate-in fade-in duration-300"
-          onClick={() => setSelectedImage(null)}
+          className="fixed inset-0 z-[100] lightbox-overlay flex items-center justify-center p-0 md:p-12 animate-in fade-in duration-500 overflow-hidden"
+          onClick={() => setSelectedIndex(null)}
         >
-          <button
-            className="absolute top-8 right-8 text-white/50 hover:text-white transition-colors z-[110]"
-            onClick={(e) => {
-              e.stopPropagation();
-              setSelectedImage(null);
-            }}
-          >
-            <X size={32} />
+          {/* Top Bar Controls */}
+          <div className="absolute top-0 left-0 w-full flex justify-between z-[130]">
+            <div className="flex">
+              <div className="header-logo-block !w-[100px] !h-[100px] hidden md:flex">
+                JH
+              </div>
+              <div className="lightbox-counter">
+                {selectedIndex + 1} / {ALL_IMAGES.length}
+              </div>
+            </div>
+
+            <div className="flex bg-black md:bg-transparent">
+              <button className="lightbox-control-btn border-l border-white/10">
+                <Search size={24} />
+              </button>
+              <button className="lightbox-control-btn border-l border-white/10">
+                <Maximize size={24} />
+              </button>
+              <button className="lightbox-control-btn border-l border-white/10">
+                <LayoutGrid size={24} />
+              </button>
+              <button
+                className="lightbox-control-btn lightbox-close-btn border-l border-white/10"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setSelectedIndex(null);
+                }}
+              >
+                <X size={32} />
+              </button>
+            </div>
+          </div>
+
+          {/* Nav Arrows */}
+          <button className="lightbox-nav-btn lightbox-nav-prev" onClick={handlePrev}>
+            <ChevronLeft size={48} />
+          </button>
+          <button className="lightbox-nav-btn lightbox-nav-next" onClick={handleNext}>
+            <ChevronRight size={48} />
           </button>
 
-          <div className="relative max-w-7xl w-full h-full flex items-center justify-center">
+          {/* Image Container */}
+          <div className="relative w-full h-full flex items-center justify-center p-4 pt-32 pb-32 md:p-0 pointer-events-none">
             <img
-              src={selectedImage}
+              key={selectedIndex}
+              src={ALL_IMAGES[selectedIndex]}
               alt="Lightbox"
-              className="max-w-full max-h-full object-contain animate-in zoom-in-95 duration-300"
+              className="max-w-full max-h-full object-contain animate-in zoom-in-95 duration-500 pointer-events-auto"
               onClick={(e) => e.stopPropagation()}
             />
+          </div>
+
+          {/* Bottom Pill */}
+          <div className="lightbox-brand-pill">
+            jayhutchh.com
           </div>
         </div>
       )}
