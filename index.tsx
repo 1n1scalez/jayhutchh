@@ -8,7 +8,8 @@ import {
   Moon,
   Sun,
   Mail,
-  Music
+  Music,
+  X
 } from 'lucide-react';
 
 // Import images from LandingPage
@@ -24,6 +25,7 @@ import yaniImg from './LandingPage/yani.jpeg';
 import zoeImg from './LandingPage/zoe.jpeg';
 import keshaImg from './LandingPage/kesha.jpeg';
 import sadiImg from './LandingPage/sadi.jpg';
+import zoe2Img from './LandingPage/zoe2.jpeg';
 
 type Page = 'HOME' | 'PORTFOLIO' | 'PACKAGES' | 'AVAILABILITY' | 'ABOUT' | 'FAQ';
 
@@ -145,6 +147,7 @@ const Footer = () => {
 const App = () => {
   const [activePage, setActivePage] = useState<Page>('HOME');
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   useEffect(() => {
     if (isDarkMode) {
@@ -306,28 +309,40 @@ const App = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Column 1 */}
             <div className="flex flex-col gap-8">
-              <div className="rounded-2xl overflow-hidden aspect-[16/10] bg-zinc-900 group">
+              <div
+                className="rounded-2xl overflow-hidden aspect-[16/10] bg-zinc-900 group cursor-pointer"
+                onClick={() => setSelectedImage(leoImg)}
+              >
                 <img
                   src={leoImg}
                   alt="Recent Work - Leo"
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
                 />
               </div>
-              <div className="rounded-2xl overflow-hidden aspect-[2/3] bg-zinc-900 group">
+              <div
+                className="rounded-2xl overflow-hidden aspect-[2/3] bg-zinc-900 group cursor-pointer"
+                onClick={() => setSelectedImage(carmenImg)}
+              >
                 <img
                   src={carmenImg}
                   alt="Recent Work - Carmen"
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
                 />
               </div>
-              <div className="rounded-2xl overflow-hidden aspect-[2/3] bg-zinc-900 group">
+              <div
+                className="rounded-2xl overflow-hidden aspect-[2/3] bg-zinc-900 group cursor-pointer"
+                onClick={() => setSelectedImage(jaedynImg)}
+              >
                 <img
                   src={jaedynImg}
                   alt="Recent Work - Jaedyn"
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
                 />
               </div>
-              <div className="rounded-2xl overflow-hidden aspect-[2/3] bg-zinc-900 group">
+              <div
+                className="rounded-2xl overflow-hidden aspect-[2/3] bg-zinc-900 group cursor-pointer"
+                onClick={() => setSelectedImage(finaImg)}
+              >
                 <img
                   src={finaImg}
                   alt="Recent Work - Fina"
@@ -338,28 +353,40 @@ const App = () => {
 
             {/* Column 2 */}
             <div className="flex flex-col gap-8">
-              <div className="rounded-2xl overflow-hidden aspect-[2/3] bg-zinc-900 group">
+              <div
+                className="rounded-2xl overflow-hidden aspect-[2/3] bg-zinc-900 group cursor-pointer"
+                onClick={() => setSelectedImage(zoeImg)}
+              >
                 <img
                   src={zoeImg}
                   alt="Recent Work - Zoe"
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
                 />
               </div>
-              <div className="rounded-2xl overflow-hidden aspect-[16/10] bg-zinc-900 group">
+              <div
+                className="rounded-2xl overflow-hidden aspect-[16/10] bg-zinc-900 group cursor-pointer"
+                onClick={() => setSelectedImage(zoe2Img)}
+              >
                 <img
-                  src={kamisImg}
-                  alt="Recent Work - Kamis"
+                  src={zoe2Img}
+                  alt="Recent Work - Zoe 2"
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
                 />
               </div>
-              <div className="rounded-2xl overflow-hidden aspect-[2/3] bg-zinc-900 group">
+              <div
+                className="rounded-2xl overflow-hidden aspect-[2/3] bg-zinc-900 group cursor-pointer"
+                onClick={() => setSelectedImage(antImg)}
+              >
                 <img
                   src={antImg}
                   alt="Recent Work - Ant"
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
                 />
               </div>
-              <div className="rounded-2xl overflow-hidden aspect-[2/3] bg-zinc-900 group">
+              <div
+                className="rounded-2xl overflow-hidden aspect-[2/3] bg-zinc-900 group cursor-pointer"
+                onClick={() => setSelectedImage(keshaImg)}
+              >
                 <img
                   src={keshaImg}
                   alt="Recent Work - Kesha"
@@ -370,28 +397,40 @@ const App = () => {
 
             {/* Column 3 */}
             <div className="flex flex-col gap-8">
-              <div className="rounded-2xl overflow-hidden aspect-[16/10] bg-zinc-900 group">
+              <div
+                className="rounded-2xl overflow-hidden aspect-[16/10] bg-zinc-900 group cursor-pointer"
+                onClick={() => setSelectedImage(taiImg)}
+              >
                 <img
                   src={taiImg}
                   alt="Recent Work - Tai"
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
                 />
               </div>
-              <div className="rounded-2xl overflow-hidden aspect-[2/3] bg-zinc-900 group">
+              <div
+                className="rounded-2xl overflow-hidden aspect-[2/3] bg-zinc-900 group cursor-pointer"
+                onClick={() => setSelectedImage(sadiImg)}
+              >
                 <img
                   src={sadiImg}
                   alt="Recent Work - Sadi"
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
                 />
               </div>
-              <div className="rounded-2xl overflow-hidden aspect-[2/3] bg-zinc-900 group">
+              <div
+                className="rounded-2xl overflow-hidden aspect-[2/3] bg-zinc-900 group cursor-pointer"
+                onClick={() => setSelectedImage(yaniImg)}
+              >
                 <img
                   src={yaniImg}
                   alt="Recent Work - Yani"
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
                 />
               </div>
-              <div className="rounded-2xl overflow-hidden aspect-[2/3] bg-zinc-900 group">
+              <div
+                className="rounded-2xl overflow-hidden aspect-[2/3] bg-zinc-900 group cursor-pointer"
+                onClick={() => setSelectedImage(snowImg)}
+              >
                 <img
                   src={snowImg}
                   alt="Recent Work - Snow"
@@ -410,6 +449,33 @@ const App = () => {
 
       {/* New Footer */}
       <Footer />
+
+      {/* Lightbox Modal */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 md:p-12 animate-in fade-in duration-300"
+          onClick={() => setSelectedImage(null)}
+        >
+          <button
+            className="absolute top-8 right-8 text-white/50 hover:text-white transition-colors z-[110]"
+            onClick={(e) => {
+              e.stopPropagation();
+              setSelectedImage(null);
+            }}
+          >
+            <X size={32} />
+          </button>
+
+          <div className="relative max-w-7xl w-full h-full flex items-center justify-center">
+            <img
+              src={selectedImage}
+              alt="Lightbox"
+              className="max-w-full max-h-full object-contain animate-in zoom-in-95 duration-300"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 };
