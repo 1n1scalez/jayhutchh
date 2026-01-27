@@ -24,6 +24,7 @@ import taiImg from './LandingPage/tai.jpeg';
 import yaniImg from './LandingPage/yani.jpeg';
 import zoeImg from './LandingPage/zoe.jpeg';
 import keshaImg from './LandingPage/kesha.jpeg';
+import sadiImg from './LandingPage/sadi.jpg';
 
 type Page = 'HOME' | 'PORTFOLIO' | 'PACKAGES' | 'AVAILABILITY' | 'ABOUT' | 'FAQ';
 
@@ -334,14 +335,21 @@ const App = () => {
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
                 />
               </div>
+              <div className="rounded-2xl overflow-hidden aspect-[2/3] bg-zinc-900 group">
+                <img
+                  src={sadiImg}
+                  alt="Recent Work - Sadi"
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
+                />
+              </div>
             </div>
 
             {/* Column 2 */}
             <div className="flex flex-col gap-8">
               <div className="rounded-2xl overflow-hidden aspect-[2/3] bg-zinc-900 group">
                 <img
-                  src={edriImg}
-                  alt="Recent Work - Edri"
+                  src={zoeImg}
+                  alt="Recent Work - Zoe"
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
                 />
               </div>
@@ -379,8 +387,8 @@ const App = () => {
               </div>
               <div className="rounded-2xl overflow-hidden aspect-[2/3] bg-zinc-900 group">
                 <img
-                  src={zoeImg}
-                  alt="Recent Work - Zoe"
+                  src={edriImg}
+                  alt="Recent Work - Edri"
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
                 />
               </div>
