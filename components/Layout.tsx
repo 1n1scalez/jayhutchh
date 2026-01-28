@@ -13,7 +13,7 @@ import {
     ChevronRight
 } from 'lucide-react';
 import { Outlet, Link, useLocation } from 'react-router-dom'; // Using Standard Link for now, or useNavigate
-import { ALL_IMAGES, leoImg } from '../constants'; // Adjust import if Layout is in components/
+import { ALL_IMAGES, PROFILE_IMAGES } from '../constants'; // Adjust import if Layout is in components/
 
 // Footer Component (Internal to Layout for now)
 const ContactSection = () => {
@@ -81,6 +81,8 @@ const Footer = () => {
     const [displayText, setDisplayText] = useState('');
     const [isDeleting, setIsDeleting] = useState(false);
     const [typingSpeed, setTypingSpeed] = useState(150);
+    const [profileIndex, setProfileIndex] = useState(0);
+    const [isCountingDown, setIsCountingDown] = useState(false);
     const phrases = ['LACK OF GREEN', 'VIBE', 'STORY', 'VISION', 'MOMENTS', 'ART'];
 
     useEffect(() => {
@@ -108,6 +110,34 @@ const Footer = () => {
         return () => clearTimeout(timer);
     }, [displayText, isDeleting, currentPhraseIndex, typingSpeed]);
 
+    useEffect(() => {
+        let interval: NodeJS.Timeout;
+
+        if (isCountingDown) {
+            // Wait 3 seconds before starting again
+            interval = setTimeout(() => {
+                setIsCountingDown(false);
+                setProfileIndex(0);
+            }, 3000);
+        } else {
+            // Cycle through images every 0.5 seconds
+            interval = setInterval(() => {
+                setProfileIndex((prev) => {
+                    if (prev === PROFILE_IMAGES.length - 1) {
+                        setIsCountingDown(true);
+                        return prev;
+                    }
+                    return prev + 1;
+                });
+            }, 500);
+        }
+
+        return () => {
+            clearInterval(interval);
+            clearTimeout(interval);
+        };
+    }, [isCountingDown]);
+
     return (
         <footer className="relative bg-black text-white overflow-hidden border-t border-zinc-900">
             <div
@@ -134,7 +164,7 @@ const Footer = () => {
 
                     <div className="lg:col-span-3 flex flex-col items-center text-center gap-6 order-2 lg:order-2">
                         <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-zinc-900 ring-2 ring-zinc-800 shadow-2xl">
-                            <img src={leoImg} alt="Jay Hutch" className="w-full h-full object-cover transition-all duration-500" />
+                            <img src={PROFILE_IMAGES[profileIndex]} alt="Jay Hutch" className="w-full h-full object-cover transition-all duration-300" />
                         </div>
                         <div>
                             <h3 className="font-condensed text-4xl tracking-tighter">@JAYHUTCHH</h3>
