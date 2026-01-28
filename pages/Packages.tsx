@@ -51,7 +51,7 @@ const packages = [
                 duration: '60 Minutes',
                 description: 'Perfect for milestone birthdays.',
                 features: ['10 Edited Images', '3 Outfits', 'All RAWs Included'],
-                link: 'https://book.stripe.com/bJe8wOer89zn6q32lMbfO0p'
+                link: 'https://book.stripe.com/7sY8wO6YG12Rg0DgcCbfO0n'
             },
             {
                 name: 'Custom Package',
@@ -59,7 +59,7 @@ const packages = [
                 duration: '120 Minutes',
                 description: 'Full creative production with custom setup.',
                 features: ['20 Edited Images', 'Unlimited Outfits', '1 Custom Setup w/Decor & Props', 'All RAWs Included'],
-                link: 'https://book.stripe.com/7sY8wO6YG12Rg0DgcCbfO0n'
+                link: 'https://book.stripe.com/bJe8wOer89zn6q32lMbfO0p'
             }
         ]
     },
