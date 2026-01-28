@@ -56,10 +56,6 @@ const Availability = () => {
                                     <span className="font-mono text-xs uppercase tracking-widest text-zinc-400">SEPTEMBER 2026</span>
                                     <span className="font-condensed text-xl tracking-tight">NEW YORK CITY</span>
                                 </li>
-                                <li className="flex justify-between items-center border-b border-zinc-100 dark:border-zinc-900 pb-2">
-                                    <span className="font-mono text-xs uppercase tracking-widest text-zinc-400">JUNE 2026</span>
-                                    <span className="font-condensed text-xl tracking-tight">LOS ANGELES</span>
-                                </li>
                                 <li className="flex justify-between items-center border-b border-zinc-100 dark:border-zinc-900 pb-2 text-zinc-400">
                                     <span className="font-mono text-xs uppercase tracking-widest">JULY 2026</span>
                                     <span className="font-condensed text-xl tracking-tight italic">TBD</span>
