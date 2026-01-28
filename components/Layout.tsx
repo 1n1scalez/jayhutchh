@@ -16,6 +16,66 @@ import { Outlet, Link, useLocation } from 'react-router-dom'; // Using Standard 
 import { ALL_IMAGES, leoImg } from '../constants'; // Adjust import if Layout is in components/
 
 // Footer Component (Internal to Layout for now)
+const ContactSection = () => {
+    return (
+        <section className="w-full bg-[var(--bg-color)] py-24 border-t border-[var(--border-color)] transition-colors duration-300">
+            <div className="container mx-auto px-6 max-w-6xl">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
+                    {/* Left Column: Info */}
+                    <div className="flex flex-col">
+                        <h2 className="font-condensed text-6xl lg:text-8xl mb-6 tracking-tighter leading-[0.8] uppercase">CONTACT ME</h2>
+                        <p className="text-zinc-500 font-medium mb-16 text-lg">Got an idea for a project? Let's make it happen!</p>
+
+                        <div className="space-y-10">
+                            <div>
+                                <h3 className="font-condensed text-2xl uppercase tracking-tighter mb-2">E-MAIL</h3>
+                                <p className="text-zinc-500 text-lg">create@bryanminear.com</p>
+                            </div>
+                            <div>
+                                <h3 className="font-condensed text-2xl uppercase tracking-tighter mb-2">LOCATION</h3>
+                                <p className="text-zinc-500 text-lg">Richmond, VA</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Right Column: Form */}
+                    <form className="flex flex-col gap-10">
+                        <div className="relative">
+                            <input
+                                type="text"
+                                placeholder="Your name*"
+                                className="w-full bg-transparent border-b border-zinc-200 dark:border-zinc-800 py-3 text-lg focus:outline-none focus:border-zinc-400 dark:focus:border-zinc-600 transition-colors placeholder:text-zinc-400 dark:placeholder:text-zinc-600"
+                            />
+                        </div>
+                        <div className="relative">
+                            <input
+                                type="email"
+                                placeholder="Your email*"
+                                className="w-full bg-transparent border-b border-zinc-200 dark:border-zinc-800 py-3 text-lg focus:outline-none focus:border-zinc-400 dark:focus:border-zinc-600 transition-colors placeholder:text-zinc-400 dark:placeholder:text-zinc-600"
+                            />
+                        </div>
+                        <div className="relative">
+                            <textarea
+                                placeholder="Your message"
+                                rows={2}
+                                className="w-full bg-transparent border-b border-zinc-200 dark:border-zinc-800 py-3 text-lg focus:outline-none focus:border-zinc-400 dark:focus:border-zinc-600 transition-colors resize-none placeholder:text-zinc-400 dark:placeholder:text-zinc-600"
+                            />
+                        </div>
+                        <div className="mt-4">
+                            <button
+                                type="button"
+                                className="bg-[#bcbcbc] dark:bg-zinc-600 text-white font-condensed px-12 py-4 text-xl tracking-wide uppercase hover:bg-zinc-400 dark:hover:bg-zinc-500 transition-all shadow-sm active:scale-95"
+                            >
+                                SEND MESSAGE
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    );
+};
+
 const Footer = () => {
     const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
     const [displayText, setDisplayText] = useState('');
@@ -327,6 +387,8 @@ const Layout = () => {
                 {/* Pass openLightbox instead of setSelectedIndex */}
                 <Outlet context={{ openLightbox }} />
             </main>
+
+            <ContactSection />
 
             <section className="w-full grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8">
                 {ALL_IMAGES.slice(0, 8).map((img, index) => (

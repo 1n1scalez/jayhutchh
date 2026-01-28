@@ -21,7 +21,7 @@ const Home = () => {
                     <h1 className="md:hidden text-[11vw] font-condensed uppercase tracking-tighter leading-[0.85] flex flex-col items-center mb-8">
                         <span className="block font-bold">Hello, I'm Jay Hutch,</span>
                         <span className="block text-zinc-400 font-light px-4">Photographer & Visual Creator</span>
-                        <span className="block font-bold">Based in Virginia, USA.</span>
+                        <span className="block font-bold">Based in Richmond, VA.</span>
                     </h1>
 
                     {/* Desktop Specific Typo Hierarchy */}
@@ -38,19 +38,24 @@ const Home = () => {
                         </span>
                     </h1>
 
-                    <div className="flex flex-row gap-4 justify-center mt-16 w-full md:w-auto">
+                    <div className="flex flex-row gap-4 justify-center mt-8 md:mt-16 w-full md:w-auto">
                         <Link
                             to="/portfolio"
                             className="btn-outline flex-1 md:flex-none py-4 px-2 text-sm text-center"
                         >
                             View Portfolio
                         </Link>
-                        <button className="btn-outline flex-1 md:flex-none py-4 px-2 text-sm">View Collections</button>
+                        <Link
+                            to="/packages"
+                            className="btn-outline flex-1 md:flex-none py-4 px-2 text-sm text-center"
+                        >
+                            View Collections
+                        </Link>
                     </div>
                 </div>
 
                 {/* Recent Work Grid Section */}
-                <div className="mt-48 w-full max-w-6xl mx-auto px-6">
+                <div className="mt-24 md:mt-48 w-full max-w-6xl mx-auto px-6">
                     <div className="text-center mb-16">
                         <h2 className="text-5xl font-condensed uppercase tracking-tighter mb-4 opacity-80">Recent Work</h2>
                         <div className="w-px h-16 bg-[var(--text-color)] mx-auto opacity-20"></div>
@@ -196,38 +201,40 @@ const Home = () => {
             </div>
 
             {/* Valentines Day Mini Shoot Section */}
-            <section className="w-full bg-rose-50 dark:bg-zinc-950 border-t border-rose-200 dark:border-zinc-800 overflow-hidden transition-colors duration-500">
+            <section className="w-full bg-black border-t border-zinc-900 overflow-hidden">
                 <div className="flex flex-col lg:flex-row h-auto lg:h-[600px]">
-                    {/* Left Content */}
-                    <div className="flex-1 p-12 lg:p-24 flex flex-col justify-center items-start gap-8 order-2 lg:order-1">
-                        <h2 className="font-[Bebas_Neue] text-6xl lg:text-8xl leading-[0.85] tracking-tight text-rose-950 dark:text-rose-50">
+                    {/* Media - Top on mobile, Left/Right on desktop */}
+                    <div className="flex-1 relative aspect-[4/5] lg:aspect-auto bg-zinc-900 group cursor-pointer overflow-hidden order-1 lg:order-2">
+                        <img
+                            src={valImg}
+                            alt="Valentines Shoot"
+                            className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                        />
+                    </div>
+
+                    {/* Content */}
+                    <div className="flex-1 p-8 lg:p-24 flex flex-col justify-center items-start gap-6 lg:gap-8 order-2 lg:order-1 text-white">
+                        <h2 className="font-condensed text-[15vw] lg:text-8xl leading-[0.8] tracking-tighter uppercase">
                             VALENTINE'S<br />SELF-LOVE<br />MINI SESSIONS
                         </h2>
-                        <p className="text-rose-800/80 dark:text-rose-200/70 max-w-md text-lg leading-relaxed font-medium">
+                        <p className="text-zinc-400 max-w-md text-lg lg:text-xl leading-relaxed font-light">
                             A confidence-boosting studio session made just for you. Exclusive to Virginia, these limited sessions are designed to capture your authentic self.
                         </p>
-                        <div className="flex gap-4">
+                        <div className="flex gap-4 w-full md:w-auto">
                             <a
                                 href="https://book.stripe.com/eVqaEW3MuaDr15J9OebfO0L"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="bg-rose-600 dark:bg-rose-700 text-white px-8 py-4 font-condensed text-xl tracking-wide uppercase hover:bg-rose-700 dark:hover:bg-rose-600 transition-colors text-center flex items-center justify-center shadow-lg hover:shadow-rose-500/20"
+                                className="bg-rose-600 text-white px-8 py-4 font-condensed text-xl tracking-wide uppercase hover:bg-rose-700 transition-colors text-center flex-1 md:flex-none shadow-lg"
                             >
                                 RESERVE MY SPOT
                             </a>
                         </div>
-                        <p className="text-xs tracking-widest uppercase text-rose-600 dark:text-rose-400 font-bold bg-rose-100 dark:bg-rose-900/30 px-3 py-1 rounded-sm">
-                            ONLY 30 SESSIONS AVAILABLE • FEB 8–14 ONLY
-                        </p>
-                    </div>
-
-                    {/* Right Media */}
-                    <div className="flex-1 relative order-1 lg:order-2 bg-rose-200 dark:bg-zinc-900 group cursor-pointer overflow-hidden">
-                        <img
-                            src={valImg}
-                            alt="Valentines Shoot"
-                            className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100 mix-blend-multiply dark:mix-blend-normal"
-                        />
+                        <div className="w-full">
+                            <p className="text-[10px] md:text-xs tracking-widest uppercase text-rose-400 font-bold bg-rose-950/40 border border-rose-900/30 px-4 py-2 rounded-sm inline-block">
+                                ONLY 30 SESSIONS AVAILABLE • FEB 8–14 ONLY
+                            </p>
+                        </div>
                     </div>
                 </div>
 
