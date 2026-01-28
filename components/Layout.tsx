@@ -20,7 +20,7 @@ const ContactSection = () => {
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
         // GHL Tracking (vbt)
@@ -30,6 +30,24 @@ const ContactSection = () => {
             email: email,
             form_id: 'contact_us_form'
         }]);
+
+        // GHL Webhook
+        try {
+            await fetch('https://services.leadconnectorhq.com/hooks/x0Gx7R899sDdLs2uM3wc/webhook-trigger/df402ec1-71de-4063-bbea-62b33648bd2f', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    name: name,
+                    email: email,
+                    source: 'Contact Form',
+                    tag: 'website-lead',
+                    form_id: 'contact_us_form',
+                    page_url: window.location.href
+                })
+            });
+        } catch (error) {
+            console.error('Webhook error:', error);
+        }
 
         alert('Message sent! Thank you for reaching out.');
         setEmail('');
