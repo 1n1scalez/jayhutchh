@@ -4,16 +4,38 @@ import { Calendar, MapPin, Clock } from 'lucide-react';
 const Availability = () => {
     const [email, setEmail] = useState('');
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        const formData = new FormData(e.currentTarget as HTMLFormElement);
+        const data = Object.fromEntries(formData.entries());
+
+        // GHL Tracking (vbt)
         const win = window as any;
         win.vbt = win.vbt || [];
         win.vbt.push(['track', 'form_submission', {
             email: email,
             form_id: 'inquiry_form'
         }]);
+
+        // GHL Webhook
+        try {
+            await fetch('https://services.leadconnectorhq.com/hooks/x0Gx7R899sDdLs2uM3wc/webhook-trigger/3a7b64ec-845a-47dd-945f-3df4b9a6b863', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    ...data,
+                    form_id: 'inquiry_form',
+                    source: window.location.href
+                }),
+                mode: 'no-cors'
+            });
+        } catch (error) {
+            console.error('Webhook error:', error);
+        }
+
         alert('Thank you for your inquiry! I will get back to you soon.');
         setEmail('');
+        (e.target as HTMLFormElement).reset();
     };
 
     return (

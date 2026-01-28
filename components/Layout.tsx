@@ -20,15 +20,37 @@ const ContactSection = () => {
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+
+        // GHL Tracking (vbt)
         const win = window as any;
         win.vbt = win.vbt || [];
         win.vbt.push(['track', 'form_submission', {
             email: email,
             form_id: 'contact_us_form'
         }]);
+
+        // GHL Webhook
+        try {
+            await fetch('https://services.leadconnectorhq.com/hooks/x0Gx7R899sDdLs2uM3wc/webhook-trigger/3a7b64ec-845a-47dd-945f-3df4b9a6b863', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    name: name,
+                    email: email,
+                    form_id: 'contact_us_form',
+                    source: window.location.href
+                }),
+                mode: 'no-cors' // Use no-cors for GHL webhooks if CORS is an issue
+            });
+        } catch (error) {
+            console.error('Webhook error:', error);
+        }
+
         alert('Message sent! Thank you for reaching out.');
+        setEmail('');
+        setName('');
     };
 
     return (
@@ -108,14 +130,33 @@ const Footer = () => {
     const [subscribeEmail, setSubscribeEmail] = useState('');
     const phrases = ['LACK OF GREEN', 'VIBE', 'STORY', 'VISION', 'MOMENTS', 'ART'];
 
-    const handleSubscribeSubmit = (e: React.FormEvent) => {
+    const handleSubscribeSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+
+        // GHL Tracking (vbt)
         const win = window as any;
         win.vbt = win.vbt || [];
         win.vbt.push(['track', 'form_submission', {
             email: subscribeEmail,
             form_id: 'subscribe_form'
         }]);
+
+        // GHL Webhook
+        try {
+            await fetch('https://services.leadconnectorhq.com/hooks/x0Gx7R899sDdLs2uM3wc/webhook-trigger/3a7b64ec-845a-47dd-945f-3df4b9a6b863', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    email: subscribeEmail,
+                    form_id: 'subscribe_form',
+                    source: window.location.href
+                }),
+                mode: 'no-cors'
+            });
+        } catch (error) {
+            console.error('Webhook error:', error);
+        }
+
         alert('Thank you for subscribing!');
         setSubscribeEmail('');
     };
