@@ -131,8 +131,10 @@ const Footer = () => {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     email: subscribeEmail,
+                    source: 'Footer Subscribe',
+                    tag: 'website-lead',
                     form_id: 'subscribe_form',
-                    source: window.location.href
+                    page_url: window.location.href
                 }),
                 mode: 'no-cors'
             });
