@@ -51,7 +51,7 @@ const Home = () => {
                             to="/packages"
                             className="btn-outline flex-1 md:flex-none py-4 px-2 text-sm text-center"
                         >
-                            View Collections
+                            View Packages
                         </Link>
                     </div>
                 </div>

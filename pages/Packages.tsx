@@ -59,7 +59,7 @@ const Packages = () => {
             <div className="max-w-7xl mx-auto">
                 <div className="flex items-end gap-6 mb-16 border-b border-zinc-200 dark:border-zinc-800 pb-8">
                     <h1 className="text-7xl md:text-9xl font-condensed tracking-tighter text-[var(--text-color)] leading-[0.8] uppercase">
-                        COLLECTIONS
+                        PACKAGES
                     </h1>
                     <span className="text-zinc-400 font-mono text-sm mb-2">INVESTMENT</span>
                 </div>
@@ -102,7 +102,7 @@ const Packages = () => {
                 <div className="mt-24 p-12 bg-zinc-50 dark:bg-zinc-950 border border-zinc-100 dark:border-zinc-900 text-center">
                     <h3 className="font-condensed text-4xl mb-4">LOOKING FOR SOMETHING CUSTOM?</h3>
                     <p className="text-zinc-500 mb-8 max-w-2xl mx-auto">
-                        If you have a unique vision that doesn't fit into our standard collections, let's chat. I'm always open to creative collaborations and custom projects.
+                        If you have a unique vision that doesn't fit into our standard packages, let's chat. I'm always open to creative collaborations and custom projects.
                     </p>
                     <Link
                         to="/availability"

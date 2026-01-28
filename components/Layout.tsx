@@ -382,7 +382,7 @@ const Layout = () => {
                         VIEW PORTFOLIO
                     </Link>
                     <Link to="/packages" className="btn-outline flex-1 py-4 text-center text-white border-white hover:bg-white hover:text-black">
-                        VIEW COLLECTIONS
+                        VIEW PACKAGES
                     </Link>
                 </div>
             </div>
