@@ -18,23 +18,25 @@ const Home = () => {
             <div className="flex flex-col items-center justify-center px-6 pt-32">
                 <div className="max-w-6xl w-full text-center">
                     {/* Mobile Specific Typo Hierarchy */}
-                    <h1 className="md:hidden text-[11vw] font-condensed uppercase tracking-tighter leading-[0.85] flex flex-col items-center mb-8">
-                        <span className="block font-bold">Hello, I'm Jay Hutch,</span>
-                        <span className="block text-zinc-400 font-light px-4">Photographer & Visual Creator</span>
-                        <span className="block font-bold">Based in Richmond, VA.</span>
+                    <h1 className="md:hidden text-[11vw] font-condensed uppercase tracking-tighter leading-[0.85] flex flex-col items-center mb-12">
+                        <span className="block font-bold">Hello, I'm Jay Hutch.</span>
+                        <span className="block text-zinc-400 font-light px-4">Visual Creator & Storyteller.</span>
+                        <span className="block text-zinc-400 font-light text-xl mt-2 italic">Dedicated to</span>
+                        <span className="block font-bold underline decoration-rose-600 underline-offset-8">Timeless Narratives.</span>
+                        <span className="block text-zinc-400 font-light mt-4 text-lg">Based in RVA — Serving Worldwide.</span>
                     </h1>
 
                     {/* Desktop Specific Typo Hierarchy */}
                     <h1 className="hidden md:block text-[calc(9vw-10px)] font-condensed uppercase tracking-tighter leading-[0.8] mb-8">
-                        <span className="block">Hello, I'm Jay Hutch,</span>
-                        <span className="block text-[var(--muted-text)]">Photographer &</span>
-                        <span className="block text-[var(--muted-text)]">Visual Creator</span>
+                        <span className="block">Hello, I'm Jay Hutch.</span>
+                        <span className="block text-[var(--muted-text)]">Visual Creator &</span>
+                        <span className="block text-[var(--muted-text)]">Storyteller.</span>
                         <span className="block">
                             <span className="text-[var(--muted-text)]">Dedicated to </span>
-                            <span>Timeless Visuals</span>
+                            <span className="underline decoration-rose-600 underline-offset-[12px]">Timeless Narratives.</span>
                         </span>
                         <span className="block">
-                            <span className="text-[var(--muted-text)]">Serving Worldwide.</span>
+                            <span className="text-[var(--muted-text)]">Based in RVA — Serving Worldwide.</span>
                         </span>
                     </h1>
 
