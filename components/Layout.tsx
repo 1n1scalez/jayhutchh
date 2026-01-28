@@ -121,9 +121,24 @@ const Footer = () => {
 
 const Layout = () => {
     const [isDarkMode, setIsDarkMode] = useState(false);
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     // Replace simple index with full state
     const [lightboxState, setLightboxState] = useState<{ index: number; images: string[] } | null>(null);
     const location = useLocation();
+
+    // Close mobile menu when route changes
+    useEffect(() => {
+        setMobileMenuOpen(false);
+    }, [location.pathname]);
+
+    // Prevent scrolling when mobile menu is open
+    useEffect(() => {
+        if (mobileMenuOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+    }, [mobileMenuOpen]);
 
     const openLightbox = (index: number, images: string[]) => {
         setLightboxState({ index, images });
@@ -202,21 +217,28 @@ const Layout = () => {
 
             <div className="mobile-split-line md:hidden"></div>
 
-            <header className="fixed top-0 left-0 w-full h-24 border-b border-[var(--border-color)] bg-[var(--bg-color)] flex items-center justify-between z-50">
+            <header className="fixed top-0 left-0 w-full h-24 border-b border-[var(--border-color)] bg-[var(--bg-color)] flex items-center justify-between z-50 transition-colors duration-300">
                 <div className="flex md:hidden w-full h-full">
                     <div className="header-logo-block">JH</div>
                     <div className="flex-1 flex items-center justify-center border-r border-[var(--border-color)] bg-[var(--bg-color)]">
                         <button onClick={toggleTheme} className="text-[var(--text-color)]">
-                            {isDarkMode ? <Sun size={20} /> : <Sun size={20} />}
+                            {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
                         </button>
                     </div>
-                    <div className="flex-1 bg-black flex items-center justify-center">
-                        <button className="text-white">
-                            <div className="flex flex-col gap-1.5 p-1">
-                                <div className="w-6 h-0.5 bg-white"></div>
-                                <div className="w-6 h-0.5 bg-white"></div>
-                                <div className="w-6 h-0.5 bg-white"></div>
-                            </div>
+                    <div className={`flex-1 flex items-center justify-center transition-colors duration-300 ${mobileMenuOpen ? 'bg-white text-black' : 'bg-black text-white'}`}>
+                        <button
+                            className="w-full h-full flex items-center justify-center"
+                            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                        >
+                            {mobileMenuOpen ? (
+                                <X size={24} />
+                            ) : (
+                                <div className="flex flex-col gap-1.5 p-1">
+                                    <div className="w-6 h-0.5 bg-current"></div>
+                                    <div className="w-6 h-0.5 bg-current"></div>
+                                    <div className="w-6 h-0.5 bg-current"></div>
+                                </div>
+                            )}
                         </button>
                     </div>
                 </div>
@@ -250,6 +272,30 @@ const Layout = () => {
                     </div>
                 </div>
             </header>
+
+            {/* Mobile Menu Overlay */}
+            <div className={`fixed inset-0 z-40 bg-zinc-950 text-white pt-24 px-6 md:hidden transition-transform duration-500 ease-in-out ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+                <nav className="flex flex-col gap-6 mt-12">
+                    {navItems.map((item) => (
+                        <Link
+                            key={item.name}
+                            to={item.path}
+                            className="text-4xl font-condensed tracking-tight hover:text-rose-500 transition-colors"
+                            onClick={() => setMobileMenuOpen(false)}
+                        >
+                            {item.name}
+                        </Link>
+                    ))}
+                </nav>
+                <div className="absolute bottom-12 left-6 right-6 flex flex-row gap-4">
+                    <Link to="/portfolio" className="btn-outline flex-1 py-4 text-center text-white border-white hover:bg-white hover:text-black">
+                        VIEW PORTFOLIO
+                    </Link>
+                    <Link to="/packages" className="btn-outline flex-1 py-4 text-center text-white border-white hover:bg-white hover:text-black">
+                        VIEW PACKAGES
+                    </Link>
+                </div>
+            </div>
 
             <aside className="fixed left-8 top-1/2 -translate-y-1/2 hidden md:block z-40">
                 <div className="theme-toggle-pill">
