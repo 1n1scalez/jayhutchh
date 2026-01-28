@@ -103,15 +103,15 @@ const packages = [
                 duration: '60 Minutes',
                 description: 'Elevate your brand with professional imagery.',
                 features: ['6 Edited Images', '2 Outfits', 'All RAWs Included'],
-                link: 'https://buy.stripe.com/fZu00i1Em8vjeWzaSibfO0J'
+                link: 'https://book.stripe.com/14A6oGaaS9zncOrbWmbfO0I'
             },
             {
-                name: 'Standard',
+                name: 'Standard Package',
                 price: '$550',
                 duration: '90 Minutes',
                 description: 'Comprehensive branding session.',
                 features: ['10 Edited Images', '3 Outfits', 'All RAWs Included'],
-                link: 'https://book.stripe.com/14A6oGaaS9zncOrbWmbfO0I'
+                link: 'https://buy.stripe.com/fZu00i1Em8vjeWzaSibfO0J'
             },
             {
                 name: 'Business Power Package',
@@ -136,7 +136,7 @@ const packages = [
                 link: 'https://book.stripe.com/3cIeVcfvc4f36q32lMbfO0r'
             },
             {
-                name: 'Standard',
+                name: 'Standard Package',
                 price: '$525',
                 duration: '60 Minutes',
                 description: 'Extended couples session.',
