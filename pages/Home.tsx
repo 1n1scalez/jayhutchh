@@ -21,9 +21,9 @@ const Home = () => {
                     <h1 className="md:hidden text-[11vw] font-condensed uppercase tracking-tighter leading-[0.85] flex flex-col items-center mb-12">
                         <span className="block font-bold">Hello, I'm Jay Hutch.</span>
                         <span className="block text-zinc-400 font-light px-4">Visual Creator & Storyteller.</span>
-                        <span className="block text-zinc-400 font-light text-xl mt-2 italic">Dedicated to</span>
+                        <span className="block text-zinc-400 font-light text-xl mt-10 mb-4 italic">Dedicated to</span>
                         <span className="block font-bold underline decoration-rose-600 underline-offset-8">Timeless Narratives.</span>
-                        <span className="block text-zinc-400 font-light mt-4 text-lg">Based in RVA — Serving Worldwide.</span>
+                        <span className="block text-zinc-400 font-light mt-12 text-lg">Based in RVA — Serving Worldwide.</span>
                     </h1>
 
                     {/* Desktop Specific Typo Hierarchy */}
