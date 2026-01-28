@@ -15,7 +15,7 @@ const Home = () => {
 
     return (
         <>
-            <div className="flex flex-col items-center justify-center px-6 pt-32 md:pt-0">
+            <div className="flex flex-col items-center justify-center px-6 pt-32">
                 <div className="max-w-6xl w-full text-center">
                     {/* Mobile Specific Typo Hierarchy */}
                     <h1 className="md:hidden text-[11vw] font-condensed uppercase tracking-tighter leading-[0.85] flex flex-col items-center mb-8">
@@ -25,7 +25,7 @@ const Home = () => {
                     </h1>
 
                     {/* Desktop Specific Typo Hierarchy */}
-                    <h1 className="hidden md:block text-[calc(9vw-10px)] font-condensed uppercase tracking-tighter leading-[0.8]">
+                    <h1 className="hidden md:block text-[calc(9vw-10px)] font-condensed uppercase tracking-tighter leading-[0.8] mb-8">
                         <span className="block">Hello, I'm Jay Hutch,</span>
                         <span className="block text-[var(--muted-text)]">Photographer &</span>
                         <span className="block text-[var(--muted-text)]">Visual Creator</span>
