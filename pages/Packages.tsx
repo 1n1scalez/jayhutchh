@@ -268,7 +268,7 @@ const Packages = () => {
                                         rel="noopener noreferrer"
                                         className="w-full bg-[var(--text-color)] text-[var(--bg-color)] py-4 font-condensed text-center tracking-widest uppercase hover:bg-rose-600 transition-colors flex items-center justify-center gap-2"
                                     >
-                                        RESERVE WITH DEPOSIT <ChevronRight size={16} />
+                                        {pkg.id === 'weddings' ? 'CHECK AVAILABILITY' : 'RESERVE WITH DEPOSIT'} <ChevronRight size={16} />
                                     </a>
                                 </div>
                             ))}
