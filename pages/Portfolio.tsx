@@ -12,7 +12,7 @@ const Portfolio = () => {
 
     return (
         <div className="w-full max-w-[1920px] mx-auto">
-            {['GRADS', 'BIRTHDAY', 'MATERNITY', 'COUPLES', 'WEDDINGS', 'PORTFOLIO', 'BRANDING'].map((category, catIndex) => (
+            {['GRADS', 'BIRTHDAY', 'MATERNITY', 'COUPLES', 'PORTFOLIO', 'BRANDING'].map((category, catIndex) => (
                 <section key={category} className="mb-32 px-6">
                     <div className="max-w-7xl mx-auto">
                         <div className="flex items-end gap-6 mb-12 border-b border-zinc-200 dark:border-zinc-800 pb-6">
