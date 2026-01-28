@@ -20,6 +20,7 @@ const ContactSection = () => {
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
+    const [message, setMessage] = useState('');
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -30,6 +31,7 @@ const ContactSection = () => {
         win.vbt.push(['track', 'form_submission', {
             email: email,
             phone: phone,
+            message: message,
             form_id: 'contact_us_form'
         }]);
 
@@ -39,10 +41,12 @@ const ContactSection = () => {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    name: name,
+                    full_name: name,
                     email: email,
                     phone: phone,
-                    source: 'Contact Form',
+                    message: message,
+                    source: 'Contact Page Form',
+                    date_submitted: new Date().toISOString(),
                     tag: 'website-lead',
                     form_id: 'contact_us_form',
                     page_url: window.location.href
@@ -56,6 +60,7 @@ const ContactSection = () => {
         setEmail('');
         setName('');
         setPhone('');
+        setMessage('');
     };
 
     return (
@@ -85,6 +90,7 @@ const ContactSection = () => {
                             <input
                                 type="text"
                                 name="name"
+                                id="full-name"
                                 placeholder="Your name*"
                                 required
                                 value={name}
@@ -96,6 +102,7 @@ const ContactSection = () => {
                             <input
                                 type="email"
                                 name="email"
+                                id="email"
                                 placeholder="Your email*"
                                 required
                                 value={email}
@@ -107,6 +114,7 @@ const ContactSection = () => {
                             <input
                                 type="tel"
                                 name="phone"
+                                id="phone"
                                 placeholder="Phone number"
                                 value={phone}
                                 onChange={(e) => setPhone(e.target.value)}
@@ -115,8 +123,11 @@ const ContactSection = () => {
                         </div>
                         <div className="relative">
                             <textarea
+                                id="message"
                                 placeholder="Your message"
                                 rows={2}
+                                value={message}
+                                onChange={(e) => setMessage(e.target.value)}
                                 className="w-full bg-transparent border-b border-zinc-200 dark:border-zinc-800 py-3 text-lg focus:outline-none focus:border-zinc-400 dark:focus:border-zinc-600 transition-colors resize-none placeholder:text-zinc-400 dark:placeholder:text-zinc-600"
                             />
                         </div>
