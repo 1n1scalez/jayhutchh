@@ -11,7 +11,7 @@ const Portfolio = () => {
     const { openLightbox } = useOutletContext<ContextType>();
 
     return (
-        <div className="w-full max-w-[1920px] mx-auto">
+        <div className="w-full max-w-[1920px] mx-auto pt-32">
             {['GRADS', 'BIRTHDAY', 'MATERNITY', 'COUPLES', 'PORTRAIT', 'BRANDING'].map((category, catIndex) => (
                 <section key={category} className="mb-32 px-6">
                     <div className="max-w-7xl mx-auto">
