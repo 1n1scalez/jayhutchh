@@ -29,7 +29,7 @@ const ContactSection = () => {
                         <div className="space-y-10">
                             <div>
                                 <h3 className="font-condensed text-2xl uppercase tracking-tighter mb-2">E-MAIL</h3>
-                                <p className="text-zinc-500 text-lg">create@bryanminear.com</p>
+                                <p className="text-zinc-500 text-lg">jayhutchh@gmail.com</p>
                             </div>
                             <div>
                                 <h3 className="font-condensed text-2xl uppercase tracking-tighter mb-2">LOCATION</h3>

@@ -82,7 +82,7 @@ const FAQ = () => {
                         I'm here to help you feel prepared and excited for your session.
                     </p>
                     <a
-                        href="mailto:create@bryanminear.com"
+                        href="mailto:jayhutchh@gmail.com"
                         className="inline-block bg-white text-black px-12 py-4 font-condensed tracking-widest uppercase hover:bg-rose-600 hover:text-white transition-colors"
                     >
                         GET IN TOUCH
