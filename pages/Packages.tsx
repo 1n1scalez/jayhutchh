@@ -103,7 +103,7 @@ const packages = [
                 duration: '60 Minutes',
                 description: 'Elevate your brand with professional imagery.',
                 features: ['6 Edited Images', '2 Outfits', 'All RAWs Included'],
-                link: 'https://buy.stripe.com/eVq00idn426V15J7G6bfO0K'
+                link: 'https://buy.stripe.com/fZu00i1Em8vjeWzaSibfO0J'
             },
             {
                 name: 'Standard',
@@ -119,7 +119,7 @@ const packages = [
                 duration: '180 Minutes',
                 description: 'Complete brand storytelling package.',
                 features: ['20 Edited Images', 'Unlimited Outfits', 'All RAWs Included'],
-                link: 'https://buy.stripe.com/fZu00i1Em8vjeWzaSibfO0J'
+                link: 'https://buy.stripe.com/eVq00idn426V15J7G6bfO0K'
             }
         ]
     },
