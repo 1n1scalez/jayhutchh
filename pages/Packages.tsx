@@ -280,7 +280,7 @@ const Packages = () => {
                     </div>
                 ))}
 
-                <div className="mt-32 mb-24 p-8 md:p-12 bg-zinc-100 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-900 transition-colors duration-300">
+                <div className="mt-32 mb-24 p-8 md:p-12 bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-900 transition-colors duration-300">
                     <div className="flex items-end gap-6 mb-16 border-b border-zinc-200 dark:border-zinc-800 pb-8">
                         <h2 className="text-7xl md:text-8xl font-condensed tracking-tighter text-[var(--text-color)] leading-[0.8] uppercase">
                             ADD-ONS
@@ -351,7 +351,7 @@ const Packages = () => {
                     </div>
                 </div>
 
-                <div className="mt-24 p-12 bg-zinc-100 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-900 text-center">
+                <div className="mt-24 p-12 bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-center transition-colors">
                     <h3 className="font-condensed text-4xl mb-4">LOOKING FOR SOMETHING CUSTOM?</h3>
                     <p className="text-zinc-500 mb-8 max-w-2xl mx-auto">
                         If you have a unique vision that doesn't fit into our standard packages, let's chat. I'm always open to creative collaborations and custom projects.
