@@ -87,6 +87,7 @@ const Availability = () => {
                                     <label className="font-condensed text-sm tracking-widest text-zinc-400 uppercase">FULL NAME*</label>
                                     <input
                                         type="text"
+                                        name="name"
                                         required
                                         className="w-full bg-transparent border-b border-zinc-200 dark:border-zinc-800 py-3 text-lg focus:outline-none focus:border-rose-500 transition-colors"
                                         placeholder="Enter your name"
@@ -96,6 +97,7 @@ const Availability = () => {
                                     <label className="font-condensed text-sm tracking-widest text-zinc-400 uppercase">EMAIL ADDRESS*</label>
                                     <input
                                         type="email"
+                                        name="email"
                                         required
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)}

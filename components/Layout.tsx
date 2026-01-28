@@ -57,6 +57,7 @@ const ContactSection = () => {
                         <div className="relative">
                             <input
                                 type="text"
+                                name="name"
                                 placeholder="Your name*"
                                 required
                                 value={name}
@@ -67,6 +68,7 @@ const ContactSection = () => {
                         <div className="relative">
                             <input
                                 type="email"
+                                name="email"
                                 placeholder="Your email*"
                                 required
                                 value={email}
@@ -225,6 +227,7 @@ const Footer = () => {
                         <form className="relative group" onSubmit={handleSubscribeSubmit}>
                             <input
                                 type="email"
+                                name="email"
                                 placeholder="EMAIL ADDRESS"
                                 required
                                 value={subscribeEmail}
