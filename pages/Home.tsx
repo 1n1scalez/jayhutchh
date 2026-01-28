@@ -20,7 +20,7 @@ const Home = () => {
                     {/* Mobile Specific Typo Hierarchy */}
                     <h1 className="md:hidden text-[11vw] font-condensed uppercase tracking-tight leading-[0.85] flex flex-col items-center mb-12">
                         <span className="block font-bold">Hello, I'm Jay Hutch.</span>
-                        <span className="block text-zinc-400 font-light px-4">Visual Creator & Storyteller.</span>
+                        <span className="block text-zinc-400 font-light px-4">Photographer & Visual Storyteller.</span>
                         <span className="block text-zinc-400 font-light text-xl mt-4 mb-1 italic tracking-normal">Dedicated to</span>
                         <span className="block font-bold underline decoration-rose-600 underline-offset-8">Timeless Narratives.</span>
                         <span className="block text-zinc-400 font-light mt-6 text-lg tracking-normal">Based in RVA — Serving Worldwide.</span>
@@ -29,8 +29,8 @@ const Home = () => {
                     {/* Desktop Specific Typo Hierarchy */}
                     <h1 className="hidden md:block text-[calc(9vw-10px)] font-condensed uppercase tracking-tighter leading-[0.8] mb-8">
                         <span className="block">Hello, I'm Jay Hutch.</span>
-                        <span className="block text-[var(--muted-text)]">Visual Creator &</span>
-                        <span className="block text-[var(--muted-text)]">Storyteller.</span>
+                        <span className="block text-[var(--muted-text)]">Photographer &</span>
+                        <span className="block text-[var(--muted-text)]">Visual Storyteller.</span>
                         <span className="block">
                             <span className="text-[var(--muted-text)]">Dedicated to </span>
                             <span className="underline decoration-rose-600 underline-offset-[12px]">Timeless Narratives.</span>
