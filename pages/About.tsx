@@ -1,5 +1,5 @@
 import React from 'react';
-import { leoImg, carmenImg, taiImg } from '../constants';
+import { aboutHeroImg, carmenImg, taiImg } from '../constants';
 
 const About = () => {
     return (
@@ -17,7 +17,7 @@ const About = () => {
                     <div className="relative group">
                         <div className="aspect-[4/5] overflow-hidden bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
                             <img
-                                src={leoImg}
+                                src={aboutHeroImg}
                                 alt="Jay Hutch"
                                 className="w-full h-full object-cover grayscale transition-transform duration-1000 group-hover:scale-105"
                             />

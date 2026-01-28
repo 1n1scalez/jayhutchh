@@ -12,6 +12,7 @@ import keshaImg from './LandingPage/kesha.jpeg';
 import sadiImg from './LandingPage/sadi.jpg';
 import zoe2Img from './LandingPage/zoe2.jpeg';
 import valImg from './LandingPage/val.png';
+import aboutHeroImg from './LandingPage/about_hero.jpg';
 import profile1 from './LandingPage/profile_1.jpg';
 import profile2 from './LandingPage/profile_2.jpg';
 import profile3 from './LandingPage/profile_3.jpg';
@@ -118,7 +119,7 @@ export const MATERNITY_IMAGES = [
 ];
 
 export {
-    antImg, carmenImg, finaImg, jaedynImg, leoImg, snowImg, taiImg, yaniImg, zoeImg, keshaImg, sadiImg, zoe2Img, valImg,
+    antImg, carmenImg, finaImg, jaedynImg, leoImg, snowImg, taiImg, yaniImg, zoeImg, keshaImg, sadiImg, zoe2Img, valImg, aboutHeroImg,
     grad1, grad2, grad3, grad4, grad5,
     grad6, grad7, grad8, grad9, grad10,
     grad11,
