@@ -13,7 +13,7 @@ const packages = [
                 duration: '45 Minutes',
                 description: 'College and high school graduation portraits.',
                 features: ['6 Edited Images', '2 Outfits', 'All RAWs Included'],
-                link: 'https://book.stripe.com/aFa3cu4Qy8vj7u76C2bfO0d'
+                link: 'https://book.stripe.com/5kQ14m4Qy5j715J3pQbfO08'
             },
             {
                 name: 'Graduate Package',
