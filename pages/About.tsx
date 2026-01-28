@@ -19,7 +19,7 @@ const About = () => {
                             <img
                                 src={aboutHeroImg}
                                 alt="Jay Hutch"
-                                className="w-full h-full object-cover grayscale transition-transform duration-1000 group-hover:scale-105"
+                                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                             />
                         </div>
                         <div className="absolute -bottom-8 -right-8 w-48 h-48 bg-rose-600 hidden md:flex items-center justify-center p-8 text-white">
@@ -71,14 +71,14 @@ const About = () => {
                         <img
                             src={taiImg}
                             alt="Work in Progress"
-                            className="w-full h-full object-cover grayscale opacity-60 hover:opacity-100 transition-opacity duration-700"
+                            className="w-full h-full object-cover opacity-60 hover:opacity-100 transition-opacity duration-700"
                         />
                     </div>
                     <div className="aspect-[16/9] overflow-hidden bg-zinc-900">
                         <img
                             src={carmenImg}
                             alt="On Set"
-                            className="w-full h-full object-cover grayscale opacity-60 hover:opacity-100 transition-opacity duration-700"
+                            className="w-full h-full object-cover opacity-60 hover:opacity-100 transition-opacity duration-700"
                         />
                     </div>
                 </div>
