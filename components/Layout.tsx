@@ -224,7 +224,7 @@ const Footer = () => {
                                 Be the first to know about special promotions<br />and session availability.
                             </p>
                         </div>
-                        <form className="relative group" onSubmit={handleSubscribeSubmit}>
+                        <form id="footer-subscribe" className="relative group" onSubmit={handleSubscribeSubmit}>
                             <input
                                 type="email"
                                 name="email"
