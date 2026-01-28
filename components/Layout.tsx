@@ -269,9 +269,11 @@ const Layout = () => {
 
     useEffect(() => {
         if (isDarkMode) {
+            document.documentElement.classList.add('dark');
             document.body.classList.add('dark');
             document.body.classList.remove('light');
         } else {
+            document.documentElement.classList.remove('dark');
             document.body.classList.add('light');
             document.body.classList.remove('dark');
         }
