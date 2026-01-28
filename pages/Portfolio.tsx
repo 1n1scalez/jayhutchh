@@ -12,7 +12,7 @@ const Portfolio = () => {
 
     return (
         <div className="w-full max-w-[1920px] mx-auto">
-            {['GRADS', 'BIRTHDAY', 'MATERNITY', 'COUPLES', 'PORTFOLIO', 'BRANDING'].map((category, catIndex) => (
+            {['GRADS', 'BIRTHDAY', 'MATERNITY', 'COUPLES', 'PORTRAIT', 'BRANDING'].map((category, catIndex) => (
                 <section key={category} className="mb-32 px-6">
                     <div className="max-w-7xl mx-auto">
                         <div className="flex items-end gap-6 mb-12 border-b border-zinc-200 dark:border-zinc-800 pb-6">
@@ -53,7 +53,7 @@ const Portfolio = () => {
 
                         <div className="mt-8 flex justify-end gap-8">
                             <Link
-                                to="/packages"
+                                to={`/packages#${category.toLowerCase()}`}
                                 className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest hover:text-rose-500 transition-colors"
                             >
                                 View Packages <ChevronRight size={16} />

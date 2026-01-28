@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ChevronRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const packages = [
     {
@@ -222,6 +222,25 @@ const packages = [
 ];
 
 const Packages = () => {
+    const { hash } = useLocation();
+
+    useEffect(() => {
+        if (hash) {
+            const id = hash.replace('#', '');
+            const element = document.getElementById(id);
+            if (element) {
+                const headerOffset = 120; // h-24 is 96px, plus some padding
+                const elementPosition = element.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    }, [hash]);
+
     return (
         <div className="w-full max-w-[1920px] mx-auto pt-32 px-6 pb-24">
             <div className="max-w-7xl mx-auto">
@@ -233,7 +252,7 @@ const Packages = () => {
                 </div>
 
                 {packages.map((pkg) => (
-                    <div key={pkg.id} className="mb-16">
+                    <div key={pkg.id} id={pkg.id} className="mb-16 scroll-mt-32">
                         <h2 className="text-5xl md:text-6xl font-condensed tracking-tighter mb-8 uppercase text-[var(--text-color)]">
                             {pkg.name}
                         </h2>
