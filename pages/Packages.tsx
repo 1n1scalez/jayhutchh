@@ -21,7 +21,7 @@ const packages = [
                 duration: '60 Minutes',
                 description: 'College and high school graduation portraits.',
                 features: ['10 Edited Images', '3 Outfits', 'All RAWs Included'],
-                link: 'https://book.stripe.com/aFa3cu4Qy8vj7u76C2bfO0d'
+                link: 'https://book.stripe.com/4gMaEW2Iq4f36q33pQbfO01'
             },
             {
                 name: 'Valedictorian Package',
@@ -29,7 +29,7 @@ const packages = [
                 duration: '90 Minutes',
                 description: 'Extended session for your big achievement.',
                 features: ['20 Edited Images', 'Unlimited Outfits', 'All RAWs Included'],
-                link: 'https://book.stripe.com/4gMaEW2Iq4f36q33pQbfO01'
+                link: 'https://book.stripe.com/aFa3cu4Qy8vj7u76C2bfO0d'
             }
         ]
     },
