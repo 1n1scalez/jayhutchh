@@ -22,7 +22,7 @@ const Home = () => {
                         <span className="block font-bold">Hello, I'm Jay Hutch.</span>
                         <span className="block text-zinc-400 font-light px-4">Visual Creator & Storyteller.</span>
                         <span className="block text-zinc-400 font-light text-xl mt-2 italic">Dedicated to</span>
-                        <span className="block font-bold underline decoration-rose-600 underline-offset-[16px]">Timeless Narratives.</span>
+                        <span className="block font-bold underline decoration-rose-600 underline-offset-8">Timeless Narratives.</span>
                         <span className="block text-zinc-400 font-light mt-4 text-lg">Based in RVA — Serving Worldwide.</span>
                     </h1>
 
@@ -33,7 +33,7 @@ const Home = () => {
                         <span className="block text-[var(--muted-text)]">Storyteller.</span>
                         <span className="block">
                             <span className="text-[var(--muted-text)]">Dedicated to </span>
-                            <span className="underline decoration-rose-600 underline-offset-[24px]">Timeless Narratives.</span>
+                            <span className="underline decoration-rose-600 underline-offset-[12px]">Timeless Narratives.</span>
                         </span>
                         <span className="block">
                             <span className="text-[var(--muted-text)]">Based in RVA — Serving Worldwide.</span>
