@@ -8,11 +8,19 @@ const packages = [
         name: 'GRADUATES',
         tiers: [
             {
-                name: 'Standard',
+                name: 'Senior Package',
                 price: '$350',
                 duration: '45 Minutes',
-                description: 'Capture your achievement with professional portraits.',
+                description: 'College and high school graduation portraits.',
                 features: ['6 Edited Images', '2 Outfits', 'All RAWs Included'],
+                link: 'https://book.stripe.com/aFa3cu4Qy8vj7u76C2bfO0d'
+            },
+            {
+                name: 'Graduate Package',
+                price: '$475',
+                duration: '60 Minutes',
+                description: 'College and high school graduation portraits.',
+                features: ['10 Edited Images', '3 Outfits', 'All RAWs Included'],
                 link: 'https://book.stripe.com/aFa3cu4Qy8vj7u76C2bfO0d'
             },
             {
