@@ -18,12 +18,12 @@ const Home = () => {
             <div className="flex flex-col items-center justify-center px-6 pt-32">
                 <div className="max-w-6xl w-full text-center">
                     {/* Mobile Specific Typo Hierarchy */}
-                    <h1 className="md:hidden text-[11vw] font-condensed uppercase tracking-tighter leading-[0.85] flex flex-col items-center mb-12">
+                    <h1 className="md:hidden text-[11vw] font-condensed uppercase tracking-normal leading-[0.85] flex flex-col items-center mb-12">
                         <span className="block font-bold">Hello, I'm Jay Hutch.</span>
                         <span className="block text-zinc-400 font-light px-4">Visual Creator & Storyteller.</span>
-                        <span className="block text-zinc-400 font-light text-xl mt-10 mb-4 italic">Dedicated to</span>
+                        <span className="block text-zinc-400 font-light text-xl mt-10 mb-4 italic tracking-widest">Dedicated to</span>
                         <span className="block font-bold underline decoration-rose-600 underline-offset-8">Timeless Narratives.</span>
-                        <span className="block text-zinc-400 font-light mt-12 text-lg">Based in RVA — Serving Worldwide.</span>
+                        <span className="block text-zinc-400 font-light mt-12 text-lg tracking-widest">Based in RVA — Serving Worldwide.</span>
                     </h1>
 
                     {/* Desktop Specific Typo Hierarchy */}
