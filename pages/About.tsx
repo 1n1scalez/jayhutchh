@@ -34,10 +34,16 @@ const About = () => {
                         <div className="space-y-6">
                             <h2 className="text-4xl font-condensed tracking-tight uppercase">JAY HUTCH</h2>
                             <p className="text-zinc-500 text-lg leading-relaxed font-light">
-                                Based in Richmond, Virginia, I am a photographer and visual creator dedicated to capturing timeless visuals. My work is defined by a stark black and white aesthetic, focused on raw emotion and authentic storytelling.
+                                I’m a photographer focused on creating clean, intentional images that actually mean something. No stiff posing. No awkward energy. Just real moments, styled with purpose.
                             </p>
                             <p className="text-zinc-500 text-lg leading-relaxed font-light">
-                                Whether it's the raw energy of a graduation, the intimate bond of a maternity session, or the professional edge of a branding shoot, my goal is to create images that resonate and stand the test of time.
+                                My approach is simple. Make you feel comfortable. Guide you when needed. Let the rest happen naturally. Whether it’s a graduation, birthday, brand shoot, or milestone moment, the goal is always the same. Photos that feel like you and still look polished.
+                            </p>
+                            <p className="text-zinc-500 text-lg leading-relaxed font-light">
+                                I work with people who want more than just “nice pictures.” You want images you’re proud to post, share, and look back on. I care about lighting, composition, and detail, but I care just as much about the experience. If the shoot feels easy, the photos show it.
+                            </p>
+                            <p className="text-zinc-500 text-lg leading-relaxed font-light">
+                                If you’re looking for timeless visuals with a modern edge, you’re in the right place.
                             </p>
                         </div>
 
