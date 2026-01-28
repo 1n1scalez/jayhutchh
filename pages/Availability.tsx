@@ -3,6 +3,7 @@ import { Calendar, MapPin, Clock } from 'lucide-react';
 
 const Availability = () => {
     const [email, setEmail] = useState('');
+    const [phone, setPhone] = useState('');
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -12,11 +13,13 @@ const Availability = () => {
         win.vbt = win.vbt || [];
         win.vbt.push(['track', 'form_submission', {
             email: email,
+            phone: phone,
             form_id: 'inquiry_form'
         }]);
 
         alert('Thank you for your inquiry! I will get back to you soon.');
         setEmail('');
+        setPhone('');
         (e.target as HTMLFormElement).reset();
     };
 
@@ -107,6 +110,17 @@ const Availability = () => {
                                         onChange={(e) => setEmail(e.target.value)}
                                         className="w-full bg-transparent border-b border-zinc-200 dark:border-zinc-800 py-3 text-lg focus:outline-none focus:border-rose-500 transition-colors"
                                         placeholder="Enter your email"
+                                    />
+                                </div>
+                                <div className="space-y-2">
+                                    <label className="font-condensed text-sm tracking-widest text-zinc-400 uppercase">PHONE NUMBER</label>
+                                    <input
+                                        type="tel"
+                                        name="phone"
+                                        value={phone}
+                                        onChange={(e) => setPhone(e.target.value)}
+                                        className="w-full bg-transparent border-b border-zinc-200 dark:border-zinc-800 py-3 text-lg focus:outline-none focus:border-rose-500 transition-colors"
+                                        placeholder="Enter your phone"
                                     />
                                 </div>
                             </div>

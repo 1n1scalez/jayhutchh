@@ -19,6 +19,7 @@ import { ALL_IMAGES, PROFILE_IMAGES } from '../constants'; // Adjust import if L
 const ContactSection = () => {
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
+    const [phone, setPhone] = useState('');
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -28,6 +29,7 @@ const ContactSection = () => {
         win.vbt = win.vbt || [];
         win.vbt.push(['track', 'form_submission', {
             email: email,
+            phone: phone,
             form_id: 'contact_us_form'
         }]);
 
@@ -39,6 +41,7 @@ const ContactSection = () => {
                 body: JSON.stringify({
                     name: name,
                     email: email,
+                    phone: phone,
                     source: 'Contact Form',
                     tag: 'website-lead',
                     form_id: 'contact_us_form',
@@ -52,6 +55,7 @@ const ContactSection = () => {
         alert('Message sent! Thank you for reaching out.');
         setEmail('');
         setName('');
+        setPhone('');
     };
 
     return (
@@ -96,6 +100,16 @@ const ContactSection = () => {
                                 required
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
+                                className="w-full bg-transparent border-b border-zinc-200 dark:border-zinc-800 py-3 text-lg focus:outline-none focus:border-zinc-400 dark:focus:border-zinc-600 transition-colors placeholder:text-zinc-400 dark:placeholder:text-zinc-600"
+                            />
+                        </div>
+                        <div className="relative">
+                            <input
+                                type="tel"
+                                name="phone"
+                                placeholder="Phone number"
+                                value={phone}
+                                onChange={(e) => setPhone(e.target.value)}
                                 className="w-full bg-transparent border-b border-zinc-200 dark:border-zinc-800 py-3 text-lg focus:outline-none focus:border-zinc-400 dark:focus:border-zinc-600 transition-colors placeholder:text-zinc-400 dark:placeholder:text-zinc-600"
                             />
                         </div>
