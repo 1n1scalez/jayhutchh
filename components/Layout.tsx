@@ -117,7 +117,7 @@ const Footer = () => {
 
             <div className="container mx-auto px-6 py-24 relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
-                    <div className="lg:col-span-5 flex flex-col gap-8">
+                    <div className="lg:col-span-5 flex flex-col gap-8 order-3 lg:order-1">
                         <h2 className="font-condensed text-4xl lg:text-6xl leading-[0.85] tracking-tighter">
                             COME FOR THE PHOTOS,<br />
                             STAY FOR THE <span className="text-rose-600 inline-block min-w-[10ch]">{displayText}<span className="animate-pulse">|</span></span>
@@ -132,7 +132,7 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    <div className="lg:col-span-3 flex flex-col items-center text-center gap-6">
+                    <div className="lg:col-span-3 flex flex-col items-center text-center gap-6 order-2 lg:order-2">
                         <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-zinc-900 ring-2 ring-zinc-800 shadow-2xl">
                             <img src={leoImg} alt="Jay Hutch" className="w-full h-full object-cover transition-all duration-500" />
                         </div>
@@ -152,7 +152,7 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    <div className="lg:col-span-4 flex flex-col gap-6 lg:pl-8">
+                    <div className="lg:col-span-4 flex flex-col gap-6 lg:pl-8 order-1 lg:order-3">
                         <div>
                             <h3 className="font-condensed text-4xl tracking-tighter mb-2">SUBSCRIBE:</h3>
                             <p className="font-condensed text-zinc-500 text-xl leading-none uppercase tracking-tighter">
