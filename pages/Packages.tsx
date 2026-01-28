@@ -43,15 +43,15 @@ const packages = [
                 duration: '45 Minutes',
                 description: 'Celebrate another year with vibrant portraits.',
                 features: ['6 Edited Images', '2 Outfits', 'All RAWs Included'],
-                link: 'https://book.stripe.com/bJe8wOer89zn6q32lMbfO0p'
+                link: 'https://book.stripe.com/14A9ASdn43aZ15Jf8ybfO0l'
             },
             {
-                name: 'Standard',
+                name: 'Standard Package',
                 price: '$500',
                 duration: '60 Minutes',
                 description: 'Perfect for milestone birthdays.',
                 features: ['10 Edited Images', '3 Outfits', 'All RAWs Included'],
-                link: 'https://book.stripe.com/14A9ASdn43aZ15Jf8ybfO0l'
+                link: 'https://book.stripe.com/bJe8wOer89zn6q32lMbfO0p'
             },
             {
                 name: 'Custom Package',
