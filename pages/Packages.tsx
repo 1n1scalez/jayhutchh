@@ -46,7 +46,7 @@ const packages = [
                 link: 'https://book.stripe.com/14A9ASdn43aZ15Jf8ybfO0l'
             },
             {
-                name: 'Standard Package',
+                name: 'Fun Package',
                 price: '$500',
                 duration: '60 Minutes',
                 description: 'Perfect for milestone birthdays.',
@@ -106,7 +106,7 @@ const packages = [
                 link: 'https://book.stripe.com/14A6oGaaS9zncOrbWmbfO0I'
             },
             {
-                name: 'Standard Package',
+                name: 'Lifestyle Package',
                 price: '$550',
                 duration: '90 Minutes',
                 description: 'Comprehensive branding session.',
@@ -136,7 +136,7 @@ const packages = [
                 link: 'https://book.stripe.com/3cIeVcfvc4f36q32lMbfO0r'
             },
             {
-                name: 'Standard Package',
+                name: 'Elegant Couples Package',
                 price: '$525',
                 duration: '60 Minutes',
                 description: 'Extended couples session.',
@@ -158,7 +158,7 @@ const packages = [
                 link: 'https://book.stripe.com/dRm8wO3MubHvg0D8KabfO0v'
             },
             {
-                name: 'Standard Package',
+                name: 'Classy Family Package',
                 price: '$575',
                 duration: '60 Minutes',
                 description: 'Extended family session.',
@@ -180,7 +180,7 @@ const packages = [
                 link: 'https://book.stripe.com/fZu6oG0Ai8vj7u75xYbfO0D'
             },
             {
-                name: 'Standard Package',
+                name: 'Custom Maternity Package',
                 price: '$800',
                 duration: '60 Minutes',
                 description: 'Delicate and beautiful maternity session.',
@@ -202,7 +202,7 @@ const packages = [
                 link: 'https://www.jayhutchh.com/check-availability'
             },
             {
-                name: 'Standard Package',
+                name: 'Signature Wedding Package',
                 price: '$3800',
                 duration: 'Up to 8 Hours',
                 description: 'Timeless wedding photography.',
