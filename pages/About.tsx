@@ -1,5 +1,5 @@
 import React from 'react';
-import { aboutHeroImg, carmenImg, taiImg } from '../constants';
+import { aboutHeroImg, zoe2Img, taiImg } from '../constants';
 
 const About = () => {
     return (
@@ -76,7 +76,7 @@ const About = () => {
                     </div>
                     <div className="aspect-[16/9] overflow-hidden bg-zinc-900">
                         <img
-                            src={carmenImg}
+                            src={zoe2Img}
                             alt="On Set"
                             className="w-full h-full object-cover opacity-60 hover:opacity-100 transition-opacity duration-700"
                         />
