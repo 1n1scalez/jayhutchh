@@ -280,7 +280,7 @@ const Packages = () => {
                     </div>
                 ))}
 
-                <div className="mt-32 mb-24">
+                <div className="mt-32 mb-24 p-8 md:p-12 bg-zinc-100 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-900 transition-colors duration-300">
                     <div className="flex items-end gap-6 mb-16 border-b border-zinc-200 dark:border-zinc-800 pb-8">
                         <h2 className="text-7xl md:text-8xl font-condensed tracking-tighter text-[var(--text-color)] leading-[0.8] uppercase">
                             ADD-ONS
