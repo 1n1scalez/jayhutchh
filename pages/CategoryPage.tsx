@@ -22,6 +22,7 @@ const CategoryPage = () => {
                 <div className="flex flex-col gap-8 mb-12">
                     <Link
                         to="/portfolio"
+                        state={{ preventScroll: true }}
                         className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-zinc-500 hover:text-[var(--text-color)] transition-colors w-fit"
                     >
                         <ChevronLeft size={16} /> Back to Portfolio
