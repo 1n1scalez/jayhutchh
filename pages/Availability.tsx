@@ -1,7 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Calendar, MapPin, Clock } from 'lucide-react';
 
 const Availability = () => {
+    const [email, setEmail] = useState('');
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        const win = window as any;
+        win.vbt = win.vbt || [];
+        win.vbt.push(['track', 'form_submission', {
+            email: email,
+            form_id: 'inquiry_form'
+        }]);
+        alert('Thank you for your inquiry! I will get back to you soon.');
+        setEmail('');
+    };
+
     return (
         <div className="w-full max-w-[1920px] mx-auto pt-32 px-6 pb-24">
             <div className="max-w-7xl mx-auto">
@@ -67,12 +81,13 @@ const Availability = () => {
                     {/* Right: Booking Form */}
                     <div className="lg:col-span-7 bg-zinc-50 dark:bg-zinc-950/50 p-8 md:p-12 border border-zinc-100 dark:border-zinc-900">
                         <h2 className="text-4xl font-condensed tracking-tight uppercase mb-8">INQUIRY FORM</h2>
-                        <form className="space-y-8">
+                        <form className="space-y-8" onSubmit={handleSubmit}>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                 <div className="space-y-2">
                                     <label className="font-condensed text-sm tracking-widest text-zinc-400 uppercase">FULL NAME*</label>
                                     <input
                                         type="text"
+                                        required
                                         className="w-full bg-transparent border-b border-zinc-200 dark:border-zinc-800 py-3 text-lg focus:outline-none focus:border-rose-500 transition-colors"
                                         placeholder="Enter your name"
                                     />
@@ -81,6 +96,9 @@ const Availability = () => {
                                     <label className="font-condensed text-sm tracking-widest text-zinc-400 uppercase">EMAIL ADDRESS*</label>
                                     <input
                                         type="email"
+                                        required
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
                                         className="w-full bg-transparent border-b border-zinc-200 dark:border-zinc-800 py-3 text-lg focus:outline-none focus:border-rose-500 transition-colors"
                                         placeholder="Enter your email"
                                     />
@@ -90,7 +108,7 @@ const Availability = () => {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                 <div className="space-y-2">
                                     <label className="font-condensed text-sm tracking-widest text-zinc-400 uppercase">SESSION TYPE*</label>
-                                    <select className="w-full bg-transparent border-b border-zinc-200 dark:border-zinc-800 py-3 text-lg focus:outline-none focus:border-rose-500 transition-colors appearance-none">
+                                    <select required className="w-full bg-transparent border-b border-zinc-200 dark:border-zinc-800 py-3 text-lg focus:outline-none focus:border-rose-500 transition-colors appearance-none">
                                         <option value="">SELECT A CATEGORY</option>
                                         <option value="grads">GRADUATES</option>
                                         <option value="birthday">BIRTHDAY</option>
@@ -119,7 +137,7 @@ const Availability = () => {
                             </div>
 
                             <button
-                                type="button"
+                                type="submit"
                                 className="w-full bg-[var(--text-color)] text-[var(--bg-color)] py-6 font-condensed text-2xl tracking-widest uppercase hover:bg-rose-600 transition-colors shadow-xl"
                             >
                                 SUBMIT INQUIRY

@@ -17,6 +17,20 @@ import { ALL_IMAGES, PROFILE_IMAGES } from '../constants'; // Adjust import if L
 
 // Footer Component (Internal to Layout for now)
 const ContactSection = () => {
+    const [email, setEmail] = useState('');
+    const [name, setName] = useState('');
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        const win = window as any;
+        win.vbt = win.vbt || [];
+        win.vbt.push(['track', 'form_submission', {
+            email: email,
+            form_id: 'contact_us_form'
+        }]);
+        alert('Message sent! Thank you for reaching out.');
+    };
+
     return (
         <section className="w-full bg-[var(--bg-color)] py-24 border-t border-[var(--border-color)] transition-colors duration-300">
             <div className="container mx-auto px-6 max-w-6xl">
@@ -39,11 +53,14 @@ const ContactSection = () => {
                     </div>
 
                     {/* Right Column: Form */}
-                    <form className="flex flex-col gap-10">
+                    <form className="flex flex-col gap-10" onSubmit={handleSubmit}>
                         <div className="relative">
                             <input
                                 type="text"
                                 placeholder="Your name*"
+                                required
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
                                 className="w-full bg-transparent border-b border-zinc-200 dark:border-zinc-800 py-3 text-lg focus:outline-none focus:border-zinc-400 dark:focus:border-zinc-600 transition-colors placeholder:text-zinc-400 dark:placeholder:text-zinc-600"
                             />
                         </div>
@@ -51,6 +68,9 @@ const ContactSection = () => {
                             <input
                                 type="email"
                                 placeholder="Your email*"
+                                required
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
                                 className="w-full bg-transparent border-b border-zinc-200 dark:border-zinc-800 py-3 text-lg focus:outline-none focus:border-zinc-400 dark:focus:border-zinc-600 transition-colors placeholder:text-zinc-400 dark:placeholder:text-zinc-600"
                             />
                         </div>
@@ -63,7 +83,7 @@ const ContactSection = () => {
                         </div>
                         <div className="mt-4">
                             <button
-                                type="button"
+                                type="submit"
                                 className="bg-[#bcbcbc] dark:bg-zinc-600 text-white font-condensed px-12 py-4 text-xl tracking-wide uppercase hover:bg-zinc-400 dark:hover:bg-zinc-500 transition-all shadow-sm active:scale-95"
                             >
                                 SEND MESSAGE
@@ -83,7 +103,20 @@ const Footer = () => {
     const [typingSpeed, setTypingSpeed] = useState(150);
     const [profileIndex, setProfileIndex] = useState(0);
     const [isCountingDown, setIsCountingDown] = useState(false);
+    const [subscribeEmail, setSubscribeEmail] = useState('');
     const phrases = ['LACK OF GREEN', 'VIBE', 'STORY', 'VISION', 'MOMENTS', 'ART'];
+
+    const handleSubscribeSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        const win = window as any;
+        win.vbt = win.vbt || [];
+        win.vbt.push(['track', 'form_submission', {
+            email: subscribeEmail,
+            form_id: 'subscribe_form'
+        }]);
+        alert('Thank you for subscribing!');
+        setSubscribeEmail('');
+    };
 
     useEffect(() => {
         const handleTyping = () => {
@@ -189,10 +222,13 @@ const Footer = () => {
                                 Be the first to know about special promotions<br />and session availability.
                             </p>
                         </div>
-                        <form className="relative group">
+                        <form className="relative group" onSubmit={handleSubscribeSubmit}>
                             <input
                                 type="email"
                                 placeholder="EMAIL ADDRESS"
+                                required
+                                value={subscribeEmail}
+                                onChange={(e) => setSubscribeEmail(e.target.value)}
                                 className="w-full bg-zinc-900/50 border border-zinc-800 py-4 px-6 pr-12 rounded text-white text-xl font-condensed tracking-tighter placeholder:text-zinc-700 focus:outline-none focus:border-rose-500 focus:ring-1 focus:ring-rose-500 transition-all"
                             />
                             <button
