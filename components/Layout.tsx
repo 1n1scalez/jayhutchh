@@ -418,7 +418,7 @@ const Layout = () => {
                 <Outlet context={{ openLightbox }} />
             </main>
 
-            <ContactSection />
+            {location.pathname === '/' && <ContactSection />}
 
             <section className="w-full grid grid-cols-4 lg:grid-cols-8">
                 {ALL_IMAGES.slice(0, 8).map((img, index) => (
