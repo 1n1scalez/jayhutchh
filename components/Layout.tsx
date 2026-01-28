@@ -254,6 +254,7 @@ const Footer = () => {
                             <input
                                 type="email"
                                 name="email"
+                                id="footer-email"
                                 placeholder="EMAIL ADDRESS"
                                 required
                                 value={subscribeEmail}
