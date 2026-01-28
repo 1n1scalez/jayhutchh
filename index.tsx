@@ -11,11 +11,13 @@ import About from './pages/About';
 import FAQ from './pages/FAQ';
 
 import { Analytics } from "@vercel/analytics/react";
+import ScrollToTop from './components/ScrollToTop';
 
 const App = () => {
   return (
     <>
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
