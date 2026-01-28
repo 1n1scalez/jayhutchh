@@ -15,10 +15,10 @@ const Home = () => {
 
     return (
         <>
-            <div className="flex flex-col items-center justify-center px-6">
+            <div className="flex flex-col items-center justify-center px-6 pt-32 md:pt-0">
                 <div className="max-w-6xl w-full text-center">
                     {/* Mobile Specific Typo Hierarchy */}
-                    <h1 className="md:hidden text-[11vw] font-condensed uppercase tracking-tighter leading-[0.85] flex flex-col items-center">
+                    <h1 className="md:hidden text-[11vw] font-condensed uppercase tracking-tighter leading-[0.85] flex flex-col items-center mb-8">
                         <span className="block font-bold">Hello, I'm Jay Hutch,</span>
                         <span className="block text-zinc-400 font-light px-4">Photographer & Visual Creator</span>
                         <span className="block font-bold">Based in Virginia, USA.</span>
@@ -38,7 +38,7 @@ const Home = () => {
                         </span>
                     </h1>
 
-                    <div className="flex flex-row gap-4 justify-center mt-12 w-full md:w-auto">
+                    <div className="flex flex-row gap-4 justify-center mt-16 w-full md:w-auto">
                         <Link
                             to="/portfolio"
                             className="btn-outline flex-1 md:flex-none py-4 px-2 text-sm text-center"
@@ -50,7 +50,7 @@ const Home = () => {
                 </div>
 
                 {/* Recent Work Grid Section */}
-                <div className="mt-32 w-full max-w-6xl mx-auto px-6">
+                <div className="mt-48 w-full max-w-6xl mx-auto px-6">
                     <div className="text-center mb-16">
                         <h2 className="text-5xl font-condensed uppercase tracking-tighter mb-4 opacity-80">Recent Work</h2>
                         <div className="w-px h-16 bg-[var(--text-color)] mx-auto opacity-20"></div>
