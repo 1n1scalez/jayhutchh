@@ -1,6 +1,6 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import Portfolio from './pages/Portfolio';
@@ -11,7 +11,6 @@ import About from './pages/About';
 import FAQ from './pages/FAQ';
 
 import { Analytics } from "@vercel/analytics/react";
-import ScrollToTop from './components/ScrollToTop';
 
 const App = () => {
   return (
