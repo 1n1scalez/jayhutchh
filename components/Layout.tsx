@@ -156,7 +156,7 @@ const Footer = () => {
                         <div>
                             <h3 className="font-condensed text-4xl tracking-tighter mb-2">SUBSCRIBE:</h3>
                             <p className="font-condensed text-zinc-500 text-xl leading-none uppercase tracking-tighter">
-                                Be the first to know about special promotions,<br />new collections, and session availability.
+                                Be the first to know about special promotions<br />and session availability.
                             </p>
                         </div>
                         <form className="relative group">
