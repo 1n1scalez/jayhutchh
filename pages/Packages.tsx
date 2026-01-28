@@ -263,7 +263,7 @@ const Packages = () => {
                                     </ul>
 
                                     <div className="mb-6 text-[10px] text-zinc-400 leading-tight italic">
-                                        Deposits are non-refundable. Additional fees (travel, studio) are invoiced separately to finalize the booking.
+                                        Deposits are non-refundable. Additional fees (travel{pkg.id !== 'weddings' ? ', studio' : ''}) are invoiced separately to finalize the booking.
                                     </div>
 
                                     <a
