@@ -109,55 +109,69 @@ const Footer = () => {
     }, [displayText, isDeleting, currentPhraseIndex, typingSpeed]);
 
     return (
-        <footer className="relative bg-black text-white overflow-hidden py-24 border-t border-zinc-900">
-            {/* Background Pattern */}
+        <footer className="relative bg-black text-white overflow-hidden border-t border-zinc-900">
             <div
-                className="absolute inset-0 opacity-10 pointer-events-none"
-                style={{
-                    backgroundImage: "url('https://www.transparenttextures.com/patterns/topography.png')",
-                    backgroundSize: '500px',
-                    filter: 'invert(1)'
-                }}
+                className="absolute inset-0 opacity-20 pointer-events-none"
+                style={{ backgroundImage: "url('/footer_pattern.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}
             ></div>
 
-            <div className="container mx-auto px-6 relative z-10">
-                <div className="flex flex-col items-center text-center max-w-2xl mx-auto space-y-12">
-                    {/* Brand Identity */}
-                    <div className="space-y-4">
-                        <div className="w-16 h-16 bg-white text-black flex items-center justify-center font-condensed text-3xl mx-auto mb-6">
-                            JH
+            <div className="container mx-auto px-6 py-24 relative z-10">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
+                    <div className="lg:col-span-5 flex flex-col gap-8">
+                        <h2 className="font-condensed text-4xl lg:text-6xl leading-[0.85] tracking-tighter">
+                            COME FOR THE PHOTOS,<br />
+                            STAY FOR THE <span className="text-rose-600 inline-block min-w-[10ch]">{displayText}<span className="animate-pulse">|</span></span>
+                        </h2>
+                        <div className="flex items-center gap-6 mt-4">
+                            <div className="w-24 h-24 bg-white text-black flex items-center justify-center font-condensed text-4xl border border-white tracking-tighter">
+                                JH
+                            </div>
+                            <p className="font-condensed text-zinc-500 text-xl tracking-tighter uppercase">
+                                © {new Date().getFullYear()}. Made by Jay Hutch.
+                            </p>
                         </div>
-                        <h2 className="font-condensed text-5xl tracking-tighter leading-none mb-2">JAY HUTCH</h2>
-                        <p className="font-condensed text-zinc-500 text-lg uppercase tracking-widest">Photographer & Visual Storyteller</p>
                     </div>
 
-                    {/* Subscribe Section */}
-                    <div className="w-full space-y-8">
-                        <div>
-                            <h3 className="font-condensed text-4xl tracking-tight mb-3">SUBSCRIBE:</h3>
-                            <p className="text-zinc-500 text-lg">I'll send you cool stuff from time to time.</p>
+                    <div className="lg:col-span-3 flex flex-col items-center text-center gap-6">
+                        <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-zinc-900 ring-2 ring-zinc-800 shadow-2xl">
+                            <img src={leoImg} alt="Jay Hutch" className="w-full h-full object-cover transition-all duration-500" />
                         </div>
-                        <form className="relative max-w-md mx-auto">
+                        <div>
+                            <h3 className="font-condensed text-4xl tracking-tighter">@JAYHUTCHH</h3>
+                            <p className="font-condensed text-zinc-500 text-lg uppercase tracking-tighter mt-1">
+                                Photographer & Visual Storyteller
+                            </p>
+                        </div>
+                        <div className="flex gap-4">
+                            <a href="https://facebook.com/jayhutchh" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white text-black rounded-full flex items-center justify-center hover:bg-rose-500 hover:text-white transition-all duration-300">
+                                <Facebook size={18} />
+                            </a>
+                            <a href="https://instagram.com/jayhutchh" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white text-black rounded-full flex items-center justify-center hover:bg-rose-500 hover:text-white transition-all duration-300">
+                                <Instagram size={18} />
+                            </a>
+                        </div>
+                    </div>
+
+                    <div className="lg:col-span-4 flex flex-col gap-6 lg:pl-8">
+                        <div>
+                            <h3 className="font-condensed text-4xl tracking-tighter mb-2">SUBSCRIBE:</h3>
+                            <p className="font-condensed text-zinc-500 text-xl leading-none uppercase tracking-tighter">
+                                I'll send you cool stuff from time to time.<br />No spam, just vibes.
+                            </p>
+                        </div>
+                        <form className="relative group">
                             <input
                                 type="email"
-                                placeholder="email address"
-                                className="w-full bg-zinc-900/30 border border-zinc-800/50 py-4 px-6 pr-12 rounded-none text-white text-lg font-condensed tracking-tighter placeholder:text-zinc-600 focus:outline-none focus:border-zinc-500 transition-all text-center"
+                                placeholder="EMAIL ADDRESS"
+                                className="w-full bg-zinc-900/50 border border-zinc-800 py-4 px-6 pr-12 rounded text-white text-xl font-condensed tracking-tighter placeholder:text-zinc-700 focus:outline-none focus:border-rose-500 focus:ring-1 focus:ring-rose-500 transition-all"
                             />
-                            <div className="absolute right-4 top-1/2 -translate-y-1/2 text-zinc-600">
+                            <button
+                                type="submit"
+                                className="absolute right-2 top-1/2 -translate-y-1/2 p-2 text-zinc-500 hover:text-rose-500 transition-colors"
+                            >
                                 <Mail size={18} />
-                            </div>
+                            </button>
                         </form>
-                    </div>
-
-                    {/* Socials & Copyright */}
-                    <div className="space-y-8 pt-6">
-                        <div className="flex justify-center gap-8">
-                            <a href="https://instagram.com/jayhutchh" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-white transition-colors uppercase font-condensed tracking-widest text-sm">INSTAGRAM</a>
-                            <a href="https://facebook.com/jayhutchh" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-white transition-colors uppercase font-condensed tracking-widest text-sm">FACEBOOK</a>
-                        </div>
-                        <p className="font-condensed text-zinc-600 text-sm tracking-widest uppercase py-4 border-t border-zinc-900 w-full">
-                            © {new Date().getFullYear()}. jayhutchh.com
-                        </p>
                     </div>
                 </div>
             </div>
