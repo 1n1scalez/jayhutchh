@@ -76,7 +76,7 @@ const packages = [
                 link: 'https://book.stripe.com/6oUfZgbeW8vjaGje4ubfO0f'
             },
             {
-                name: 'Standard',
+                name: 'Standard Package',
                 price: '$500',
                 duration: '60 Minutes',
                 description: 'Multi-location portrait session.',
@@ -158,7 +158,7 @@ const packages = [
                 link: 'https://book.stripe.com/dRm8wO3MubHvg0D8KabfO0v'
             },
             {
-                name: 'Standard',
+                name: 'Standard Package',
                 price: '$575',
                 duration: '60 Minutes',
                 description: 'Extended family session.',
@@ -180,7 +180,7 @@ const packages = [
                 link: 'https://book.stripe.com/fZu6oG0Ai8vj7u75xYbfO0D'
             },
             {
-                name: 'Standard',
+                name: 'Standard Package',
                 price: '$800',
                 duration: '60 Minutes',
                 description: 'Delicate and beautiful maternity session.',
@@ -202,7 +202,7 @@ const packages = [
                 link: 'https://www.jayhutchh.com/check-availability'
             },
             {
-                name: 'Standard',
+                name: 'Standard Package',
                 price: '$3800',
                 duration: 'Up to 8 Hours',
                 description: 'Timeless wedding photography.',
