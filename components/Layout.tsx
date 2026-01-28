@@ -12,7 +12,7 @@ import {
     ChevronLeft,
     ChevronRight
 } from 'lucide-react';
-import { Outlet, Link, useLocation } from 'react-router-dom'; // Using Standard Link for now, or useNavigate
+import { Outlet, Link, useLocation, ScrollRestoration } from 'react-router-dom';
 import { ALL_IMAGES, PROFILE_IMAGES } from '../constants'; // Adjust import if Layout is in components/
 
 // Footer Component (Internal to Layout for now)
@@ -299,6 +299,7 @@ const Layout = () => {
 
     return (
         <div className="relative min-h-screen z-10 flex flex-col">
+            <ScrollRestoration />
             <div className="grid-lines hidden md:flex">
                 <div className="grid-line"></div>
                 <div className="grid-line"></div>

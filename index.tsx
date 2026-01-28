@@ -12,28 +12,34 @@ import FAQ from './pages/FAQ';
 
 import { Analytics } from "@vercel/analytics/react";
 
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Layout />,
+    children: [
+      { index: true, element: <Home /> },
+      { path: 'portfolio', element: <Portfolio /> },
+      { path: 'portfolio/:category', element: <CategoryPage /> },
+      { path: 'packages', element: <Packages /> },
+      { path: 'availability', element: <Availability /> },
+      { path: 'about', element: <About /> },
+      { path: 'faq', element: <FAQ /> },
+      {
+        path: '*',
+        element: (
+          <div className="min-h-[50vh] flex items-center justify-center">
+            <h1 className="text-4xl font-condensed text-[var(--text-color)]">COMING SOON</h1>
+          </div>
+        ),
+      },
+    ],
+  },
+]);
+
 const App = () => {
   return (
     <>
-      <BrowserRouter>
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path="portfolio" element={<Portfolio />} />
-            <Route path="portfolio/:category" element={<CategoryPage />} />
-            <Route path="packages" element={<Packages />} />
-            <Route path="availability" element={<Availability />} />
-            <Route path="about" element={<About />} />
-            <Route path="faq" element={<FAQ />} />
-            <Route path="*" element={
-              <div className="min-h-[50vh] flex items-center justify-center">
-                <h1 className="text-4xl font-condensed text-[var(--text-color)]">COMING SOON</h1>
-              </div>
-            } />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+      <RouterProvider router={router} />
       <Analytics />
     </>
   );
