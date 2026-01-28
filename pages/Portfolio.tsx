@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { useOutletContext } from 'react-router-dom';
+import React from 'react';
+import { useOutletContext, Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
-import { ALL_IMAGES, GRAD_IMAGES } from '../constants';
+import { getImagesForCategory } from '../constants';
 
 type ContextType = {
     openLightbox: (index: number, images: string[]) => void;
@@ -22,12 +22,13 @@ const Portfolio = () => {
                             <span className="text-zinc-400 font-mono text-sm mb-2">0{catIndex + 1}</span>
                         </div>
 
-                        <div className={`grid grid-cols-1 ${category === 'GRADS' ? 'md:grid-cols-3 lg:grid-cols-5' : 'md:grid-cols-3'} gap-4 md:gap-8`}>
+                        <div className={`grid grid-cols-1 ${category === 'GRADS' ? 'md:grid-cols-3' : 'md:grid-cols-3'} gap-4 md:gap-8`}>
                             {/* Display specific images for categories if available, else fallback */}
                             {(() => {
-                                const sourceImages = category === 'GRADS' ? GRAD_IMAGES : ALL_IMAGES;
-                                const imagesToShow = category === 'GRADS'
-                                    ? sourceImages
+                                const sourceImages = getImagesForCategory(category);
+                                const isSpecialCategory = category === 'GRADS' || category === 'BIRTHDAY' || category === 'PORTFOLIO' || category === 'COUPLES' || category === 'BRANDING' || category === 'MATERNITY';
+                                const imagesToShow = isSpecialCategory
+                                    ? sourceImages.slice(0, 3)
                                     : sourceImages.slice(catIndex % 4, (catIndex % 4) + 3);
 
                                 return imagesToShow.map((img, i) => (
@@ -35,8 +36,8 @@ const Portfolio = () => {
                                         key={i}
                                         className="aspect-[4/5] bg-zinc-900 overflow-hidden group relative cursor-pointer"
                                         onClick={() => openLightbox(
-                                            category === 'GRADS' ? i : (catIndex % 4) + i,
-                                            category === 'GRADS' ? GRAD_IMAGES : ALL_IMAGES
+                                            isSpecialCategory ? i : (catIndex % 4) + i,
+                                            isSpecialCategory ? sourceImages : sourceImages // Pass full source for navigation context
                                         )}
                                     >
                                         <img
@@ -50,10 +51,19 @@ const Portfolio = () => {
                             })()}
                         </div>
 
-                        <div className="mt-8 flex justify-end">
-                            <button className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest hover:text-rose-500 transition-colors">
+                        <div className="mt-8 flex justify-end gap-8">
+                            <Link
+                                to="/packages"
+                                className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest hover:text-rose-500 transition-colors"
+                            >
+                                View Packages <ChevronRight size={16} />
+                            </Link>
+                            <Link
+                                to={`/portfolio/${category.toLowerCase()}`}
+                                className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest hover:text-rose-500 transition-colors"
+                            >
                                 View All {category} <ChevronRight size={16} />
-                            </button>
+                            </Link>
                         </div>
                     </div>
                 </section>
