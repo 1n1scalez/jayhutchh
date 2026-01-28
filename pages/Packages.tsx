@@ -276,6 +276,77 @@ const Packages = () => {
                     </div>
                 ))}
 
+                <div className="mt-32 mb-24">
+                    <div className="flex items-end gap-6 mb-16 border-b border-zinc-200 dark:border-zinc-800 pb-8">
+                        <h2 className="text-7xl md:text-8xl font-condensed tracking-tighter text-[var(--text-color)] leading-[0.8] uppercase">
+                            ADD-ONS
+                        </h2>
+                        <span className="text-zinc-400 font-mono text-sm mb-2">CUSTOMIZE YOUR SESSION</span>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl">
+                        <div className="space-y-8">
+                            <div>
+                                <h3 className="font-mono text-xs text-rose-500 uppercase tracking-widest mb-4">Enhancements</h3>
+                                <div className="space-y-4">
+                                    <div className="flex justify-between border-b border-zinc-100 dark:border-zinc-900 pb-2">
+                                        <span className="text-zinc-600 dark:text-zinc-300">Extra Edited Image</span>
+                                        <span className="font-bold">$15 ea / 10 for $120</span>
+                                    </div>
+                                    <div className="flex justify-between border-b border-zinc-100 dark:border-zinc-900 pb-2">
+                                        <span className="text-zinc-600 dark:text-zinc-300">Second Location</span>
+                                        <span className="font-bold">$100</span>
+                                    </div>
+                                    <div className="flex justify-between border-b border-zinc-100 dark:border-zinc-900 pb-2">
+                                        <span className="text-zinc-600 dark:text-zinc-300">Extra Outfit</span>
+                                        <span className="font-bold">$50</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h3 className="font-mono text-xs text-rose-500 uppercase tracking-widest mb-4">Deliverables</h3>
+                                <div className="space-y-4">
+                                    <div className="flex justify-between border-b border-zinc-100 dark:border-zinc-900 pb-2">
+                                        <span className="text-zinc-600 dark:text-zinc-300">Rush Delivery (24-48h)</span>
+                                        <span className="font-bold">$150</span>
+                                    </div>
+                                    <div className="flex justify-between border-b border-zinc-100 dark:border-zinc-900 pb-2">
+                                        <span className="text-zinc-600 dark:text-zinc-300">Rush Delivery (4-5 days)</span>
+                                        <span className="font-bold">$50</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="space-y-8">
+                            <div>
+                                <h3 className="font-mono text-xs text-rose-500 uppercase tracking-widest mb-4">Extra Time</h3>
+                                <div className="space-y-4">
+                                    <div className="flex justify-between border-b border-zinc-100 dark:border-zinc-900 pb-2">
+                                        <span className="text-zinc-600 dark:text-zinc-300">+15 Minutes</span>
+                                        <span className="font-bold">$75</span>
+                                    </div>
+                                    <div className="flex justify-between border-b border-zinc-100 dark:border-zinc-900 pb-2">
+                                        <span className="text-zinc-600 dark:text-zinc-300">+30 Minutes</span>
+                                        <span className="font-bold">$125 - $150</span>
+                                    </div>
+                                    <div className="flex justify-between border-b border-zinc-100 dark:border-zinc-900 pb-2">
+                                        <span className="text-zinc-600 dark:text-zinc-300">+60 Minutes</span>
+                                        <span className="font-bold">$250 - $300</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="pt-4">
+                                <p className="text-zinc-500 italic text-sm">
+                                    Add-ons can be requested before or after your session.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div className="mt-24 p-12 bg-zinc-50 dark:bg-zinc-950 border border-zinc-100 dark:border-zinc-900 text-center">
                     <h3 className="font-condensed text-4xl mb-4">LOOKING FOR SOMETHING CUSTOM?</h3>
                     <p className="text-zinc-500 mb-8 max-w-2xl mx-auto">
