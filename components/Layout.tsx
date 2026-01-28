@@ -135,8 +135,7 @@ const Footer = () => {
                     tag: 'website-lead',
                     form_id: 'subscribe_form',
                     page_url: window.location.href
-                }),
-                mode: 'no-cors'
+                })
             });
         } catch (error) {
             console.error('Webhook error:', error);
