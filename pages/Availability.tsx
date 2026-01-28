@@ -53,7 +53,7 @@ const Availability = () => {
                             <h3 className="font-condensed text-2xl tracking-tighter">TRAVEL DATES</h3>
                             <ul className="space-y-4">
                                 <li className="flex justify-between items-center border-b border-zinc-100 dark:border-zinc-900 pb-2">
-                                    <span className="font-mono text-xs uppercase tracking-widest text-zinc-400">MAY 2026</span>
+                                    <span className="font-mono text-xs uppercase tracking-widest text-zinc-400">SEPTEMBER 2026</span>
                                     <span className="font-condensed text-xl tracking-tight">NEW YORK CITY</span>
                                 </li>
                                 <li className="flex justify-between items-center border-b border-zinc-100 dark:border-zinc-900 pb-2">
