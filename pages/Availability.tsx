@@ -33,9 +33,6 @@ const Availability = () => {
                                     <Calendar size={14} /> FEB 8 – FEB 14
                                 </div>
                                 <div className="flex items-center gap-3">
-                                    <MapPin size={14} /> STUDIO 402, RVA
-                                </div>
-                                <div className="flex items-center gap-3">
                                     <Clock size={14} /> 30 MINS • 6 PHOTOS
                                 </div>
                             </div>
