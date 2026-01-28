@@ -144,7 +144,7 @@ export const getImagesForCategory = (category: string): string[] => {
     if (category.toUpperCase() === 'BIRTHDAY') {
         return BIRTHDAY_IMAGES;
     }
-    if (category.toUpperCase() === 'PORTFOLIO') {
+    if (category.toUpperCase() === 'PORTRAIT') {
         return PORTRAIT_IMAGES;
     }
     if (category.toUpperCase() === 'COUPLES') {

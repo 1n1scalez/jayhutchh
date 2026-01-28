@@ -26,7 +26,7 @@ const Portfolio = () => {
                             {/* Display specific images for categories if available, else fallback */}
                             {(() => {
                                 const sourceImages = getImagesForCategory(category);
-                                const isSpecialCategory = category === 'GRADS' || category === 'BIRTHDAY' || category === 'PORTFOLIO' || category === 'COUPLES' || category === 'BRANDING' || category === 'MATERNITY';
+                                const isSpecialCategory = category === 'GRADS' || category === 'BIRTHDAY' || category === 'PORTRAIT' || category === 'COUPLES' || category === 'BRANDING' || category === 'MATERNITY';
                                 const imagesToShow = isSpecialCategory
                                     ? sourceImages.slice(0, 3)
                                     : sourceImages.slice(catIndex % 4, (catIndex % 4) + 3);
