@@ -17,6 +17,7 @@ import profile2 from './LandingPage/profile_2.jpg';
 import profile3 from './LandingPage/profile_3.jpg';
 import profile4 from './LandingPage/profile_4.jpg';
 import profile5 from './LandingPage/profile_5.jpg';
+import profile6 from './LandingPage/profile_6.jpg';
 
 // New Grads Imports
 import grad1 from './Portfolio/grad_1.png';
@@ -130,10 +131,10 @@ export {
     branding1, branding2, branding3, branding4, branding5,
     branding6, branding7, branding8, branding9,
     maternity1, maternity2, maternity3,
-    profile1, profile2, profile3, profile4, profile5
+    profile1, profile2, profile3, profile4, profile5, profile6
 };
 
-export const PROFILE_IMAGES = [profile1, profile2, profile3, profile4, profile5];
+export const PROFILE_IMAGES = [profile1, profile2, profile3, profile4, profile5, profile6];
 
 export const getImagesForCategory = (category: string): string[] => {
     if (category.toUpperCase() === 'GRADS') {

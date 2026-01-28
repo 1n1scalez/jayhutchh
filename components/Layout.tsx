@@ -129,7 +129,7 @@ const Footer = () => {
                     }
                     return prev + 1;
                 });
-            }, 500);
+            }, 100);
         }
 
         return () => {
