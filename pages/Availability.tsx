@@ -5,17 +5,37 @@ const Availability = () => {
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        const formData = new FormData(e.target as HTMLFormElement);
+        const data = Object.fromEntries(formData.entries());
 
         // GHL Tracking (vbt)
         const win = window as any;
         win.vbt = win.vbt || [];
         win.vbt.push(['track', 'form_submission', {
-            email: email,
-            phone: phone,
+            email: data.email as string,
+            phone: data.phone as string,
             form_id: 'inquiry_form'
         }]);
+
+        // GHL Webhook
+        try {
+            await fetch('https://services.leadconnectorhq.com/hooks/x0Gx7R899sDdLs2uM3wc/webhook-trigger/26930763-dc8f-4aca-b6d2-418591a3f111', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    ...data,
+                    source: 'Availability Inquiry Form',
+                    date_submitted: new Date().toISOString(),
+                    tag: 'website-lead',
+                    form_id: 'inquiry_form',
+                    page_url: window.location.href
+                })
+            });
+        } catch (error) {
+            console.error('Webhook error:', error);
+        }
 
         alert('Thank you for your inquiry! I will get back to you soon.');
         setEmail('');
@@ -94,7 +114,7 @@ const Availability = () => {
                                     <label className="font-condensed text-sm tracking-widest text-zinc-400 uppercase">FULL NAME*</label>
                                     <input
                                         type="text"
-                                        name="name"
+                                        name="full_name"
                                         required
                                         className="w-full bg-transparent border-b border-zinc-200 dark:border-zinc-800 py-3 text-lg focus:outline-none focus:border-rose-500 transition-colors"
                                         placeholder="Enter your name"
@@ -128,7 +148,11 @@ const Availability = () => {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                 <div className="space-y-2">
                                     <label className="font-condensed text-sm tracking-widest text-zinc-400 uppercase">SESSION TYPE*</label>
-                                    <select required className="w-full bg-transparent border-b border-zinc-200 dark:border-zinc-800 py-3 text-lg focus:outline-none focus:border-rose-500 transition-colors appearance-none">
+                                    <select
+                                        name="session_type"
+                                        required
+                                        className="w-full bg-transparent border-b border-zinc-200 dark:border-zinc-800 py-3 text-lg focus:outline-none focus:border-rose-500 transition-colors appearance-none"
+                                    >
                                         <option value="">SELECT A CATEGORY</option>
                                         <option value="grads">GRADUATES</option>
                                         <option value="birthday">BIRTHDAY</option>
@@ -142,6 +166,7 @@ const Availability = () => {
                                     <label className="font-condensed text-sm tracking-widest text-zinc-400 uppercase">PREFERRED DATE</label>
                                     <input
                                         type="date"
+                                        name="preferred_date"
                                         className="w-full bg-transparent border-b border-zinc-200 dark:border-zinc-800 py-3 text-lg focus:outline-none focus:border-rose-500 transition-colors"
                                     />
                                 </div>
@@ -150,6 +175,7 @@ const Availability = () => {
                             <div className="space-y-2">
                                 <label className="font-condensed text-sm tracking-widest text-zinc-400 uppercase">TELL ME ABOUT YOUR VISION</label>
                                 <textarea
+                                    name="message"
                                     rows={4}
                                     className="w-full bg-transparent border-b border-zinc-200 dark:border-zinc-800 py-3 text-lg focus:outline-none focus:border-rose-500 transition-colors resize-none"
                                     placeholder="Describe what you're looking for..."
