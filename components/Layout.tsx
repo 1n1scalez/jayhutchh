@@ -458,11 +458,10 @@ const Layout = () => {
                         ))}
                     </nav>
                 </div>
-        </div>
-            </header >
+            </header>
 
-    {/* Mobile Menu Overlay */ }
-    < div className = {`fixed inset-0 z-40 bg-zinc-950 text-white pt-24 px-6 md:hidden transition-transform duration-500 ease-in-out ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+            {/* Mobile Menu Overlay */}
+            <div className={`fixed inset-0 z-40 bg-zinc-950 text-white pt-24 px-6 md:hidden transition-transform duration-500 ease-in-out ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
                 <nav className="flex flex-col gap-6 mt-12">
                     {navItems.map((item) => (
                         <Link
@@ -516,7 +515,7 @@ const Layout = () => {
                 <Outlet context={{ openLightbox }} />
             </main>
 
-{ location.pathname === '/' && <ContactSection /> }
+            {location.pathname === '/' && <ContactSection />}
 
             <section className="w-full grid grid-cols-4 lg:grid-cols-8">
                 {ALL_IMAGES.slice(0, 8).map((img, index) => (
@@ -528,36 +527,36 @@ const Layout = () => {
             </section>
             <Footer />
 
-{
-    lightboxState && (
-        <div className="fixed inset-0 z-[100] lightbox-overlay flex items-center justify-center p-0 md:p-12 animate-in fade-in duration-500 overflow-hidden" onClick={closeLightbox}>
-            <div className="absolute top-0 left-0 w-full flex justify-between z-[130]">
-                <div className="flex">
-                    <div className="header-logo-block !w-[100px] !h-[100px] hidden md:flex">JH</div>
-                    <div className="lightbox-counter">{lightboxState.index + 1} / {lightboxState.images.length}</div>
-                </div>
-                <div className="flex bg-black md:bg-transparent">
-                    <button className="lightbox-control-btn border-l border-white/10"><Search size={24} /></button>
-                    <button className="lightbox-control-btn border-l border-white/10"><Maximize size={24} /></button>
-                    <button className="lightbox-control-btn border-l border-white/10"><LayoutGrid size={24} /></button>
-                    <button className="lightbox-control-btn lightbox-close-btn border-l border-white/10" onClick={(e) => { e.stopPropagation(); closeLightbox(); }}><X size={32} /></button>
-                </div>
-            </div>
-            <button className="lightbox-nav-btn lightbox-nav-prev" onClick={handlePrev}><ChevronLeft size={48} /></button>
-            <button className="lightbox-nav-btn lightbox-nav-next" onClick={handleNext}><ChevronRight size={48} /></button>
-            <div className="relative w-full h-full flex items-center justify-center p-4 pt-32 pb-32 md:p-0 pointer-events-none">
-                <img
-                    key={`${lightboxState.index}-${lightboxState.images[lightboxState.index]}`} // Ensure re-render
-                    src={lightboxState.images[lightboxState.index]}
-                    alt="Lightbox"
-                    className="max-w-full max-h-full object-contain animate-in zoom-in-95 duration-500 pointer-events-auto"
-                    onClick={(e) => e.stopPropagation()}
-                />
-            </div>
-            <div className="lightbox-brand-pill">jayhutchh.com</div>
-        </div>
-    )
-}
+            {
+                lightboxState && (
+                    <div className="fixed inset-0 z-[100] lightbox-overlay flex items-center justify-center p-0 md:p-12 animate-in fade-in duration-500 overflow-hidden" onClick={closeLightbox}>
+                        <div className="absolute top-0 left-0 w-full flex justify-between z-[130]">
+                            <div className="flex">
+                                <div className="header-logo-block !w-[100px] !h-[100px] hidden md:flex">JH</div>
+                                <div className="lightbox-counter">{lightboxState.index + 1} / {lightboxState.images.length}</div>
+                            </div>
+                            <div className="flex bg-black md:bg-transparent">
+                                <button className="lightbox-control-btn border-l border-white/10"><Search size={24} /></button>
+                                <button className="lightbox-control-btn border-l border-white/10"><Maximize size={24} /></button>
+                                <button className="lightbox-control-btn border-l border-white/10"><LayoutGrid size={24} /></button>
+                                <button className="lightbox-control-btn lightbox-close-btn border-l border-white/10" onClick={(e) => { e.stopPropagation(); closeLightbox(); }}><X size={32} /></button>
+                            </div>
+                        </div>
+                        <button className="lightbox-nav-btn lightbox-nav-prev" onClick={handlePrev}><ChevronLeft size={48} /></button>
+                        <button className="lightbox-nav-btn lightbox-nav-next" onClick={handleNext}><ChevronRight size={48} /></button>
+                        <div className="relative w-full h-full flex items-center justify-center p-4 pt-32 pb-32 md:p-0 pointer-events-none">
+                            <img
+                                key={`${lightboxState.index}-${lightboxState.images[lightboxState.index]}`} // Ensure re-render
+                                src={lightboxState.images[lightboxState.index]}
+                                alt="Lightbox"
+                                className="max-w-full max-h-full object-contain animate-in zoom-in-95 duration-500 pointer-events-auto"
+                                onClick={(e) => e.stopPropagation()}
+                            />
+                        </div>
+                        <div className="lightbox-brand-pill">jayhutchh.com</div>
+                    </div>
+                )
+            }
         </div >
     );
 };
