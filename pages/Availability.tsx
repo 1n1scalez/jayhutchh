@@ -115,6 +115,7 @@ const Availability = () => {
                                     <input
                                         type="text"
                                         name="full_name"
+                                        id="full-name"
                                         required
                                         className="w-full bg-transparent border-b border-zinc-200 dark:border-zinc-800 py-3 text-lg focus:outline-none focus:border-rose-500 transition-colors"
                                         placeholder="Enter your name"
@@ -125,6 +126,7 @@ const Availability = () => {
                                     <input
                                         type="email"
                                         name="email"
+                                        id="email"
                                         required
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)}
@@ -137,6 +139,7 @@ const Availability = () => {
                                     <input
                                         type="tel"
                                         name="phone"
+                                        id="phone"
                                         value={phone}
                                         onChange={(e) => setPhone(e.target.value)}
                                         className="w-full bg-transparent border-b border-zinc-200 dark:border-zinc-800 py-3 text-lg focus:outline-none focus:border-rose-500 transition-colors"
@@ -149,7 +152,8 @@ const Availability = () => {
                                 <div className="space-y-2">
                                     <label className="font-condensed text-sm tracking-widest text-zinc-400 uppercase">SESSION TYPE*</label>
                                     <select
-                                        name="session_type"
+                                        name="shoot_type"
+                                        id="shoot-type"
                                         required
                                         className="w-full bg-transparent border-b border-zinc-200 dark:border-zinc-800 py-3 text-lg focus:outline-none focus:border-rose-500 transition-colors appearance-none"
                                     >
@@ -167,6 +171,7 @@ const Availability = () => {
                                     <input
                                         type="date"
                                         name="preferred_date"
+                                        id="preferred-date"
                                         className="w-full bg-transparent border-b border-zinc-200 dark:border-zinc-800 py-3 text-lg focus:outline-none focus:border-rose-500 transition-colors"
                                     />
                                 </div>
@@ -176,6 +181,7 @@ const Availability = () => {
                                 <label className="font-condensed text-sm tracking-widest text-zinc-400 uppercase">TELL ME ABOUT YOUR VISION</label>
                                 <textarea
                                     name="message"
+                                    id="message"
                                     rows={4}
                                     className="w-full bg-transparent border-b border-zinc-200 dark:border-zinc-800 py-3 text-lg focus:outline-none focus:border-rose-500 transition-colors resize-none"
                                     placeholder="Describe what you're looking for..."
