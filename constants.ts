@@ -1,85 +1,85 @@
 // Import images from LandingPage
-import antImg from './LandingPage/ant.jpg';
-import carmenImg from './LandingPage/carmen.jpg';
-import finaImg from './LandingPage/fina.jpg';
-import jaedynImg from './LandingPage/jaedyn.jpg';
-import leoImg from './LandingPage/leo.jpg';
-import snowImg from './LandingPage/snow.jpg';
-import taiImg from './LandingPage/tai.jpeg';
-import yaniImg from './LandingPage/yani.jpeg';
-import zoeImg from './LandingPage/zoe.jpeg';
-import keshaImg from './LandingPage/kesha.jpeg';
-import sadiImg from './LandingPage/sadi.jpg';
-import zoe2Img from './LandingPage/zoe2.jpeg';
-import valImg from './LandingPage/val.png';
-import aboutHeroImg from './LandingPage/about_hero.jpg';
-import profile1 from './LandingPage/profile_1.jpg';
-import profile2 from './LandingPage/profile_2.jpg';
-import profile3 from './LandingPage/profile_3.jpg';
-import profile4 from './LandingPage/profile_4.jpg';
-import profile5 from './LandingPage/profile_5.jpg';
-import profile6 from './LandingPage/profile_6.jpg';
+import antImg from './LandingPage/ant.webp';
+import carmenImg from './LandingPage/carmen.webp';
+import finaImg from './LandingPage/fina.webp';
+import jaedynImg from './LandingPage/jaedyn.webp';
+import leoImg from './LandingPage/leo.webp';
+import snowImg from './LandingPage/snow.webp';
+import taiImg from './LandingPage/tai.webp';
+import yaniImg from './LandingPage/yani.webp';
+import zoeImg from './LandingPage/zoe.webp';
+import keshaImg from './LandingPage/kesha.webp';
+import sadiImg from './LandingPage/sadi.webp';
+import zoe2Img from './LandingPage/zoe2.webp';
+import valImg from './LandingPage/val.webp';
+import aboutHeroImg from './LandingPage/about_hero.webp';
+import profile1 from './LandingPage/profile_1.webp';
+import profile2 from './LandingPage/profile_2.webp';
+import profile3 from './LandingPage/profile_3.webp';
+import profile4 from './LandingPage/profile_4.webp';
+import profile5 from './LandingPage/profile_5.webp';
+import profile6 from './LandingPage/profile_6.webp';
 
 // New Grads Imports
-import grad1 from './Portfolio/grad_1.png';
-import grad2 from './Portfolio/grad_2.png';
-import grad3 from './Portfolio/grad_3.png';
-import grad4 from './Portfolio/grad_4.png';
-import grad5 from './Portfolio/grad_5.png';
+import grad1 from './Portfolio/grad_1.webp';
+import grad2 from './Portfolio/grad_2.webp';
+import grad3 from './Portfolio/grad_3.webp';
+import grad4 from './Portfolio/grad_4.webp';
+import grad5 from './Portfolio/grad_5.webp';
 
-import grad6 from './Portfolio/grad_6.png';
-import grad7 from './Portfolio/grad_7.png';
-import grad8 from './Portfolio/grad_8.png';
-import grad9 from './Portfolio/grad_9.png';
-import grad10 from './Portfolio/grad_10.png';
-import grad11 from './Portfolio/grad_11.png';
+import grad6 from './Portfolio/grad_6.webp';
+import grad7 from './Portfolio/grad_7.webp';
+import grad8 from './Portfolio/grad_8.webp';
+import grad9 from './Portfolio/grad_9.webp';
+import grad10 from './Portfolio/grad_10.webp';
+import grad11 from './Portfolio/grad_11.webp';
 
 // Birthday Imports
-import birthday1 from './Portfolio/birthday_1.png';
-import birthday2 from './Portfolio/birthday_2.png';
-import birthday3 from './Portfolio/birthday_3.png';
-import birthday4 from './Portfolio/birthday_4.png';
-import birthday5 from './Portfolio/birthday_5.png';
-import birthday6 from './Portfolio/birthday_6.png';
-import birthday7 from './Portfolio/birthday_7.png';
-import birthday8 from './Portfolio/birthday_8.png';
-import birthday9 from './Portfolio/birthday_9.png';
+import birthday1 from './Portfolio/birthday_1.webp';
+import birthday2 from './Portfolio/birthday_2.webp';
+import birthday3 from './Portfolio/birthday_3.webp';
+import birthday4 from './Portfolio/birthday_4.webp';
+import birthday5 from './Portfolio/birthday_5.webp';
+import birthday6 from './Portfolio/birthday_6.webp';
+import birthday7 from './Portfolio/birthday_7.webp';
+import birthday8 from './Portfolio/birthday_8.webp';
+import birthday9 from './Portfolio/birthday_9.webp';
 
 // Portrait Imports
-import portrait1 from './Portfolio/portrait_1.png';
-import portrait2 from './Portfolio/portrait_2.png';
-import portrait3 from './Portfolio/portrait_3.png';
-import portrait4 from './Portfolio/portrait_4.png';
-import portrait5 from './Portfolio/portrait_5.png';
-import portrait6 from './Portfolio/portrait_6.png';
-import portrait7 from './Portfolio/portrait_7.png';
-import portrait8 from './Portfolio/portrait_8.jpg';
-import portrait9 from './Portfolio/portrait_9.jpg';
-import portrait10 from './Portfolio/portrait_10.jpg';
-import portrait11 from './Portfolio/portrait_11.jpg';
-import portrait12 from './Portfolio/portrait_12.jpg';
-import portrait13 from './Portfolio/portrait_13.jpg';
+import portrait1 from './Portfolio/portrait_1.webp';
+import portrait2 from './Portfolio/portrait_2.webp';
+import portrait3 from './Portfolio/portrait_3.webp';
+import portrait4 from './Portfolio/portrait_4.webp';
+import portrait5 from './Portfolio/portrait_5.webp';
+import portrait6 from './Portfolio/portrait_6.webp';
+import portrait7 from './Portfolio/portrait_7.webp';
+import portrait8 from './Portfolio/portrait_8.webp';
+import portrait9 from './Portfolio/portrait_9.webp';
+import portrait10 from './Portfolio/portrait_10.webp';
+import portrait11 from './Portfolio/portrait_11.webp';
+import portrait12 from './Portfolio/portrait_12.webp';
+import portrait13 from './Portfolio/portrait_13.webp';
 
 // Couples Imports
-import couples1 from './Portfolio/couples_1.jpg';
-import couples2 from './Portfolio/couples_2.jpg';
-import couples3 from './Portfolio/couples_3.jpg';
+import couples1 from './Portfolio/couples_1.webp';
+import couples2 from './Portfolio/couples_2.webp';
+import couples3 from './Portfolio/couples_3.webp';
 
 // Branding Imports
-import branding1 from './Portfolio/branding_1.png';
-import branding2 from './Portfolio/branding_2.png';
-import branding3 from './Portfolio/branding_3.png';
-import branding4 from './Portfolio/branding_4.png';
-import branding5 from './Portfolio/branding_5.png';
-import branding6 from './Portfolio/branding_6.png';
-import branding7 from './Portfolio/branding_7.png';
-import branding8 from './Portfolio/branding_8.png';
-import branding9 from './Portfolio/branding_9.png';
+import branding1 from './Portfolio/branding_1.webp';
+import branding2 from './Portfolio/branding_2.webp';
+import branding3 from './Portfolio/branding_3.webp';
+import branding4 from './Portfolio/branding_4.webp';
+import branding5 from './Portfolio/branding_5.webp';
+import branding6 from './Portfolio/branding_6.webp';
+import branding7 from './Portfolio/branding_7.webp';
+import branding8 from './Portfolio/branding_8.webp';
+import branding9 from './Portfolio/branding_9.webp';
 
 // Maternity Imports
-import maternity1 from './Portfolio/maternity_1.png';
-import maternity2 from './Portfolio/maternity_2.jpg';
-import maternity3 from './Portfolio/maternity_3.png';
+import maternity1 from './Portfolio/maternity_1.webp';
+import maternity2 from './Portfolio/maternity_2.webp';
+import maternity3 from './Portfolio/maternity_3.webp';
 
 export const ALL_IMAGES = [
     leoImg, carmenImg, jaedynImg, finaImg,
