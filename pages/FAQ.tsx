@@ -4,27 +4,43 @@ import { Plus, Minus } from 'lucide-react';
 const faqData = [
     {
         question: "HOW DO I BOOK A SESSION?",
-        answer: "You can book a session through our Availability page or by contacting me directly via the form at the bottom of any page. Once we confirm a date, a deposit is required to secure your spot."
+        answer: "Choose your package and reserve with a deposit. After payment, you'll submit your preferred dates and receive next steps to confirm availability and prepare for your shoot."
     },
     {
-        question: "WHAT IS YOUR TURNAROUND TIME?",
-        answer: "For standard portrait and branding sessions, you will receive your high-res digital gallery within 7-10 business days. Wedding turnaround is typically 4-6 weeks."
+        question: "WHEN IS MY DATE OFFICIALLY CONFIRMED?",
+        answer: "Your date is confirmed once the deposit is paid and all required details are approved. For weddings, a signed contract is also required."
     },
     {
-        question: "DO YOU TRAVEL FOR SHOOTS?",
-        answer: "Yes, I am based in Richmond, VA but available for travel worldwide. Travel fees apply for sessions outside of a 30-mile radius from Richmond."
+        question: "IS THE DEPOSIT REFUNDABLE?",
+        answer: "No. Deposits are non-refundable and reserve availability for your session date. They may be transferable to a new date if rescheduled within the allowed window."
     },
     {
-        question: "WHAT SHOULD I WEAR?",
-        answer: "I recommend neutral colors and timeless pieces that make you feel confident. Avoid busy patterns that might distract from your face. I provide a detailed style guide upon booking."
+        question: "WHAT HAPPENS IF I DON'T COMPLETE ADDITIONAL REQUIRED PAYMENTS?",
+        answer: "Additional fees such as travel or studio rental are invoiced separately once details are confirmed. If required invoices are not paid, the booking may be canceled and the deposit will not be refunded."
     },
     {
-        question: "CAN I GET THE RAW FILES?",
-        answer: "I do not provide RAW files. Part of the service I provide is the professional editing and 'look' that defines my work. You will receive high-resolution, professionally edited JPEGs."
+        question: "DO YOU TRAVEL?",
+        answer: "Yes. I'm based in Richmond and available for travel worldwide. Travel fees may apply depending on location and distance."
     },
     {
-        question: "WHAT IF I NEED TO RESCHEDULE?",
-        answer: "I understand that things come up. You can reschedule once with at least 48 hours notice. The deposit is non-refundable but can be transferred to your new date."
+        question: "ARE TRAVEL & STUDIO FEES INCLUDED IN THE PACKAGE PRICE?",
+        answer: "No. Travel & Studio fees are invoiced separately once the session location and logistics are confirmed."
+    },
+    {
+        question: "WHAT HAPPENS AFTER I PAY THE DEPOSIT?",
+        answer: "After your deposit is received, you'll: Submit preferred dates, complete a short intake form, and receive a prep guide with everything you need to know before your session. Availability is confirmed within 24 hours."
+    },
+    {
+        question: "WHAT IS YOUR RESCHEDULING POLICY?",
+        answer: "Reschedules must be requested at least 48 hours in advance. Same-day cancellations or no-shows forfeit the deposit."
+    },
+    {
+        question: "WHEN WILL I RECEIVE MY PHOTOS?",
+        answer: "Standard turnaround times: Portrait, grad, maternity, and lifestyle sessions: 7–10 days. Weddings: timeline outlined in your contract. Rush delivery is available for an additional fee."
+    },
+    {
+        question: "CAN I ADD EXTRAS TO MY SESSION?",
+        answer: "Yes. Add-ons such as extra time, outfits, locations, rush delivery, and additional edited images are available and can be added before or after your session."
     }
 ];
 
