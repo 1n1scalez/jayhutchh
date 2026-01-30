@@ -394,6 +394,7 @@ const Layout = () => {
         { name: 'PORTFOLIO', path: '/portfolio' },
         { name: 'PACKAGES', path: '/packages' },
         { name: 'AVAILABILITY', path: '/availability' },
+        { name: 'WEDDING', path: '/wedding-availability' },
         { name: 'ABOUT', path: '/about' },
         { name: 'FAQ', path: '/faq' }
     ];

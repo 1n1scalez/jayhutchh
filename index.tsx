@@ -7,6 +7,7 @@ import Portfolio from './pages/Portfolio';
 import CategoryPage from './pages/CategoryPage';
 import Packages from './pages/Packages';
 import Availability from './pages/Availability';
+import WeddingAvailability from './pages/WeddingAvailability';
 import About from './pages/About';
 import FAQ from './pages/FAQ';
 
@@ -22,6 +23,7 @@ const router = createBrowserRouter([
       { path: 'portfolio/:category', element: <CategoryPage /> },
       { path: 'packages', element: <Packages /> },
       { path: 'availability', element: <Availability /> },
+      { path: 'wedding-availability', element: <WeddingAvailability /> },
       { path: 'about', element: <About /> },
       { path: 'faq', element: <FAQ /> },
       {
