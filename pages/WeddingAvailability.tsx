@@ -8,14 +8,28 @@ const WeddingAvailability = () => {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         const formData = new FormData(e.target as HTMLFormElement);
-        const data = Object.fromEntries(formData.entries());
+
+        // Build payload matching the required structure
+        const payload = {
+            full_name: formData.get('full_name') as string,
+            partner_name: formData.get('partner_name') as string,
+            email: formData.get('email') as string,
+            phone: formData.get('phone') as string,
+            wedding_date: formData.get('wedding_date') as string,
+            wedding_venue: formData.get('wedding_venue') as string,
+            guest_count: formData.get('guest_count') as string,
+            budget_range: formData.get('budget_range') as string,
+            referral_source: formData.get('referral_source') as string,
+            wedding_vision: formData.get('wedding_vision') as string,
+            source: 'Wedding Inquiry Form'
+        };
 
         // GHL Tracking (vbt)
         const win = window as any;
         win.vbt = win.vbt || [];
         win.vbt.push(['track', 'form_submission', {
-            email: data.email as string,
-            phone: data.phone as string,
+            email: payload.email,
+            phone: payload.phone,
             form_id: 'wedding_inquiry_form'
         }]);
 
@@ -24,23 +38,17 @@ const WeddingAvailability = () => {
             await fetch('https://services.leadconnectorhq.com/hooks/x0Gx7R899sDdLs2uM3wc/webhook-trigger/b4a4f969-6a30-474d-a340-42a03fb48824', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    ...data,
-                    source: 'Wedding Availability Inquiry Form',
-                    date_submitted: new Date().toISOString(),
-                    tag: 'wedding-lead',
-                    form_id: 'wedding_inquiry_form',
-                    page_url: window.location.href
-                })
+                body: JSON.stringify(payload)
             });
-        } catch (error) {
-            console.error('Webhook error:', error);
-        }
 
-        alert('Thank you for your wedding inquiry! I will get back to you soon.');
-        setEmail('');
-        setPhone('');
-        (e.target as HTMLFormElement).reset();
+            alert('Your wedding inquiry has been sent! We will be in touch soon.');
+            setEmail('');
+            setPhone('');
+            (e.target as HTMLFormElement).reset();
+        } catch (error) {
+            console.error('Wedding Webhook Error:', error);
+            alert('There was an error submitting your inquiry. Please try again.');
+        }
     };
 
     return (
@@ -117,8 +125,8 @@ const WeddingAvailability = () => {
                                     <label className="font-condensed text-sm tracking-widest text-zinc-400 uppercase">YOUR NAME*</label>
                                     <input
                                         type="text"
-                                        name="bride_name"
-                                        id="bride-name"
+                                        name="full_name"
+                                        id="your-name"
                                         required
                                         className="w-full bg-transparent border-b border-zinc-200 dark:border-zinc-800 py-3 text-lg focus:outline-none focus:border-rose-500 transition-colors"
                                         placeholder="Enter your name"
@@ -128,8 +136,8 @@ const WeddingAvailability = () => {
                                     <label className="font-condensed text-sm tracking-widest text-zinc-400 uppercase">PARTNER'S NAME*</label>
                                     <input
                                         type="text"
-                                        name="groom_name"
-                                        id="groom-name"
+                                        name="partner_name"
+                                        id="partner-name"
                                         required
                                         className="w-full bg-transparent border-b border-zinc-200 dark:border-zinc-800 py-3 text-lg focus:outline-none focus:border-rose-500 transition-colors"
                                         placeholder="Enter partner's name"
@@ -178,7 +186,7 @@ const WeddingAvailability = () => {
                                     <label className="font-condensed text-sm tracking-widest text-zinc-400 uppercase">WEDDING VENUE/LOCATION*</label>
                                     <input
                                         type="text"
-                                        name="venue"
+                                        name="wedding_venue"
                                         id="venue"
                                         required
                                         className="w-full bg-transparent border-b border-zinc-200 dark:border-zinc-800 py-3 text-lg focus:outline-none focus:border-rose-500 transition-colors"
@@ -233,8 +241,8 @@ const WeddingAvailability = () => {
                             <div className="space-y-2">
                                 <label className="font-condensed text-sm tracking-widest text-zinc-400 uppercase">TELL US ABOUT YOUR WEDDING VISION</label>
                                 <textarea
-                                    name="message"
-                                    id="message"
+                                    name="wedding_vision"
+                                    id="wedding-vision"
                                     rows={5}
                                     className="w-full bg-transparent border-b border-zinc-200 dark:border-zinc-800 py-3 text-lg focus:outline-none focus:border-rose-500 transition-colors resize-none"
                                     placeholder="Share your story, wedding style, what drew you to my work, and any specific requests..."
