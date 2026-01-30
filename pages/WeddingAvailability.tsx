@@ -21,7 +21,7 @@ const WeddingAvailability = () => {
 
         // GHL Webhook
         try {
-            await fetch('https://services.leadconnectorhq.com/hooks/x0Gx7R899sDdLs2uM3wc/webhook-trigger/26930763-dc8f-4aca-b6d2-418591a3f111', {
+            await fetch('https://services.leadconnectorhq.com/hooks/x0Gx7R899sDdLs2uM3wc/webhook-trigger/b4a4f969-6a30-474d-a340-42a03fb48824', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
